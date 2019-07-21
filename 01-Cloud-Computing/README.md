@@ -19,8 +19,9 @@ wget https://download2.rstudio.org/server/bionic/amd64/rstudio-server-1.2.1335-a
 sudo gdebi rstudio-server-1.2.1335-amd64.deb
 ```
 4. By running the following command we will create a new user to access our RStudio Server (replace `<USERNAME>` with the username of your choice). You will need to provide a password, **keep it simple and write it down somewhere safe**:
-
-`sudo adduser <USERNAME>`
+```
+sudo adduser <USERNAME>
+```
 
 ## Log-in to RStudio
 1. From Cloud Shell (and not the SSH window) run the following command, where `micro-auto` is your instance's name:

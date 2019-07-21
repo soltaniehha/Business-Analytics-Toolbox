@@ -1,4 +1,4 @@
-gcloud compute --project=ba-770 instances create micro\
+gcloud compute --project=<PROJECT-ID> instances create micro\
   --zone=us-central1-a\
   --machine-type=f1-micro\
   --image=ubuntu-1804-bionic-v20190612\

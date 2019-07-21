@@ -1,4 +1,4 @@
-gcloud compute --project=ba-770 instances create micro-auto \
+gcloud compute --project=<PROJECT-ID> instances create micro-auto \
   --zone=us-central1-a \
   --machine-type=f1-micro \
   --metadata=^,@^startup-script=\#\!/bin/sh$'\n'export\ NAME=\$\(curl\ -X\ GET\ http://metadata.google.internal/computeMetadata/v1/instance/name\ -H\ \'Metadata-Flavor:\ Google\'\)$'\n'export\ ZONE=\$\(curl\ -X\ GET\ http://metadata.google.internal/computeMetadata/v1/instance/zone\ -H\ \'Metadata-Flavor:\ Google\'\)$'\n'$'\n'echo\ \"boot\ \$\(date\ \+\'\%Y\%M\%d-\%H\%m\%S\'\)\"\ \>\ /tmp/userdata.txt$'\n'\(\ $'\n'echo\ \"Starting...\"\ \>\>\ /tmp/userdata.txt$'\n'sleep\ 600$'\n'while\ true\;\ do$'\n'\ \ \ \ logins=\$\(w\ \|\ sed\ 1,2d\ \|\ wc\ -l\)$'\n'\ \ \ \ echo\ \"\[\ \$\(date\ \+\'\%Y\%M\%d-\%H\%m\%S\'\)\ \]\ Number\ of\ logins:\ \$\{logins\}\"\ \>\>\ /tmp/userdata.txt\ \ \ $'\n'\ \ \ \ if\ \[\ \"\$\{logins\}\"\ -eq\ 0\ \]\;\ then$'\n'\ \ \ \ \ \ \ \ gcloud\ --quiet\ compute\ instances\ stop\ \$NAME\ --zone=\$ZONE$'\n'\ \ \ \ fi$'\n'\ \ \ \ sleep\ 10$'\n'done\ $'\n'\)\ \& \

@@ -4,7 +4,7 @@
 
 `create-self-stopping-micro-instance.txt` script creates an f1-micro instance named **micro-auto** that will stop itself once the user is logged out to bring in cost-saving benefits.
 
-## Instructions on Creating the Instance & Installation
+## Instructions on Creating the Instance & RStudio Server Installation
 
 Scripts above need to be run in the Cloud Shell. But before executing them you would need to update the "--project" argument. Simply replace `<PROJECT-ID>` with your project ID. Please note that project ID is not necessarily the same as project name.
 
@@ -19,6 +19,7 @@ wget https://download2.rstudio.org/server/bionic/amd64/rstudio-server-1.2.1335-a
 sudo gdebi rstudio-server-1.2.1335-amd64.deb
 ```
 4. By running the following command we will create a new user to access our RStudio Server (replace `<USERNAME>` with the username of your choice). You will need to provide a password, **keep it simple and write it down somewhere safe**:
+
 `sudo adduser <USERNAME>`
 
 ## Log-in to RStudio
@@ -26,8 +27,9 @@ sudo gdebi rstudio-server-1.2.1335-amd64.deb
 `gcloud compute ssh micro-auto --zone us-central1-a  -- -L 8080:localhost:8787`
 2. Once you see `xxx@micro-auto:~$` at the prompt click on the **Web Preview** icon on the top right of Cloud Shell. You should be directed to a new webpage which is the login page of your RStudio Server. Use the username/password you just created to login.
 
-**Note:** Since this is a self-stopping instance anytime you log out of the instance (by closing or exiting the Cloud Shell) your instance will "stop" itself.
-**Note:** Always save your work and push it to your repository.
+**Note:** Since this is a self-stopping instance anytime you log out of the instance (by closing or exiting the Cloud Shell) your instance will "stop" automatically.
+
+**Note:** Always save your work and push it to your git repository.
 
 ## Appendix
 A cleaner version of the startup script that has been used in `create-self-stopping-micro-instance.txt` comes below:

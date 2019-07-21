@@ -2,9 +2,9 @@
 
 `create-micro-instance.txt` script creates an f1-micro instance named **micro**.
 
-`create-self-stopping-micro-instance.txt` script creates an f1-micro instance named **micro-auto** that .
+`create-self-stopping-micro-instance.txt` script creates an f1-micro instance named **micro-auto** that will stop itself once the user is logged out to bring in cost-saving benefits.
 
-A cleaner version of the startup script that has been used comes below:
+A cleaner version of the startup script that has been used in `create-self-stopping-micro-instance.txt` comes below:
 
 ```
 #!/bin/bash

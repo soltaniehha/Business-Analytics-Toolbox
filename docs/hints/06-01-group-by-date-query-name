@@ -1,0 +1,4 @@
+%%bq query -n transactions
+SELECT EXTRACT(DATE FROM InvoiceDate) AS day, count(*) AS NumberOfTransactions FROM `examples.retail`
+GROUP BY day
+ORDER BY day

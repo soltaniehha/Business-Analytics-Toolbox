@@ -1,0 +1,2 @@
+%%bq query
+SELECT min(InvoiceDate), max(InvoiceDate) FROM `examples.retail`

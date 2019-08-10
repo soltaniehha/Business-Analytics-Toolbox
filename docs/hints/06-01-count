@@ -1,0 +1,2 @@
+%%bq query
+SELECT count(*) FROM `ba-770.examples.retail`

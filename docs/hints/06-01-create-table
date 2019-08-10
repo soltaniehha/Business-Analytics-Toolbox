@@ -1,0 +1,5 @@
+%%bq query
+CREATE OR REPLACE TABLE `examples.retail`
+AS
+SELECT *, (Quantity * UnitPrice) AS SalesDollar FROM `examples.online_retail`
+WHERE UnitPrice > 0

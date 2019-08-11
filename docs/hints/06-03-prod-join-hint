@@ -1,0 +1,1 @@
+We need to create a connection between the two tables. We can use the ProductID and ID columns from these tables to link them. That way we are able to get the relevant information.

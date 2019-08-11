@@ -1,0 +1,2 @@
+%%bq query -n GOOGL
+SELECT Date, Close from `examples.google_stock`

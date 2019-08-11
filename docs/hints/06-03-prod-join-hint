@@ -1,1 +1,3 @@
 We need to create a connection between the two tables. We can use the ProductID and ID columns from these tables to link them. That way we are able to get the relevant information.
+
+Now that we have the common column think about how you can use the previous query where you grouped by ProductID to get the total quantity and use that as the "left" side of the join. The other option would be to first join the two tables and then do the group by. However, the former would be a more efficient way to do this since our left table would be potentially smaller after GROUP BY.

@@ -1,0 +1,3 @@
+Please note that the schema is different for the older customer dataset. In order to do a UNION operation successfully you need to have both tables/queries with the same schema.
+
+You can fix this by using the right order for column names rather than * for one of the tables and match with the other one.

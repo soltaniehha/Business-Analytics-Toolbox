@@ -33,10 +33,13 @@ Alternatively, you can set a password for the existing user. E.g., if you are co
 1. If you just created your instance it is up and running and you can continue to the next step. If your instance is stopped you would need to "start" it before connecting to it. You can do it in two simple ways:
   * Go to your Comupte Engine page, select the instance and click Start.
   * From the Cloud Shell run the following command to start an instance called `micro-auto`:
-  
-`gcloud compute instances start micro-auto --zone us-central1-a`
+
+> `gcloud compute instances start micro-auto --zone us-central1-a`
+
 2. From Cloud Shell (and not the SSH window) run the following command, where `micro-auto` is your instance's name:
-`gcloud compute ssh micro-auto --zone us-central1-a  -- -L 8080:localhost:8787`
+
+> `gcloud compute ssh micro-auto --zone us-central1-a  -- -L 8080:localhost:8787`
+
 3. Once you see `xxx@micro-auto:~$` at the prompt click on the **Web Preview** icon on the top right of Cloud Shell and select preview on port 8080. You should be directed to a new webpage which is the login page of your RStudio Server. Use the username/password you just created to login.
 
 **Note:** Since this is a self-stopping instance anytime you log out of the instance (by closing or exiting the Cloud Shell) your instance will "stop" automatically.

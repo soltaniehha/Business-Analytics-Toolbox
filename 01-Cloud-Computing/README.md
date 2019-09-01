@@ -23,6 +23,12 @@ sudo gdebi rstudio-server-1.2.1335-amd64.deb
 sudo adduser <USERNAME>
 ```
 
+Alternatively, you can set a password for the existing user. E.g., if you are connected with mohammad@micro-auto you already have a username called `mohammad`. You can set your password by:
+
+`sudo passwd mohammad`
+
+**Note:** once asked for a fingerprint passphrase just hit Enter twice. This is not necessary.
+
 ## Log-in to RStudio
 1. From Cloud Shell (and not the SSH window) run the following command, where `micro-auto` is your instance's name:
 `gcloud compute ssh micro-auto --zone us-central1-a  -- -L 8080:localhost:8787`

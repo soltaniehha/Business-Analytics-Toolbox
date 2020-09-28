@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<!-- saved from url=(0102)https://8081-dot-4725377-dot-devshell.appspot.com/nbconvert/html/datalab/notebooks/Assignment-1.ipynb# -->
-<html class="gr__8081-dot-4725377-dot-devshell_appspot_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html>
+<head><meta charset="utf-8" />
 
 <title>Assignment-1</title>
 
-<script src="./Assignment-1_files/require.min.js"></script>
-<script src="./Assignment-1_files/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
 
@@ -12997,8 +12996,10 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -13009,49 +13010,12 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
-    </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
     </style>
 
 
@@ -13082,13 +13046,13 @@ div#notebook {
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
-<link rel="stylesheet" href="./Assignment-1_files/custom.css">
+<link rel="stylesheet" href="custom.css">
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="./Assignment-1_files/latest.js"></script><script type="text/javascript" async="" src="./Assignment-1_files/MathJax.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config;executed=true">
+    <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
             inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -13105,2003 +13069,15 @@ div#notebook {
         }
     });
     </script>
-    <!-- End of mathjax configuration -->
-
-<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="extensions/charting">
-/*
- * Copyright 2015 Google Inc. All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- * in compliance with the License. You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under the License
- * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and limitations under
- * the License.
- */
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    }
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-define(["require", "exports"], function (require, exports) {
-    "use strict";
-    /// <reference path="../../../../externs/ts/require/require.d.ts" />
-    var Charting;
-    (function (Charting) {
-        // Wrappers for Plotly.js and Google Charts
-        var ChartLibraryDriver = /** @class */ (function () {
-            function ChartLibraryDriver(dom, chartStyle) {
-                this.dom = dom;
-                this.chartStyle = chartStyle;
-            }
-            ChartLibraryDriver.prototype.init = function (chartModule) {
-                this.chartModule = chartModule;
-            };
-            ChartLibraryDriver.prototype.addPageChangedHandler = function (handler) {
-            };
-            ChartLibraryDriver.prototype.error = function (message) {
-            };
-            return ChartLibraryDriver;
-        }());
-        var PlotlyDriver = /** @class */ (function (_super) {
-            __extends(PlotlyDriver, _super);
-            function PlotlyDriver(dom, chartStyle) {
-                return _super.call(this, dom, chartStyle) || this;
-            }
-            PlotlyDriver.prototype.requires = function (url, chartStyle) {
-                return ['d3', 'plotly'];
-            };
-            PlotlyDriver.prototype.draw = function (data, options) {
-                /*
-                 * TODO(gram): if we start moving more chart types over to Plotly.js we should change the
-                 * shape of the data we pass to render so we don't need to reshape it here. Also, a fair
-                 * amount of the computation done here could be moved to Python code. We should just be
-                 * passing in the mostly complete layout object in JSON, for example.
-                 */
-                var xlabels = [];
-                var points = [];
-                var layout = {
-                    xaxis: {},
-                    yaxis: {},
-                    height: 300,
-                    margin: {
-                        b: 60,
-                        t: 60,
-                        l: 60,
-                        r: 60
-                    }
-                };
-                if (options.title) {
-                    layout.title = options.title;
-                }
-                var minX = undefined;
-                var maxX = undefined;
-                if ('hAxis' in options) {
-                    if ('minValue' in options.hAxis) {
-                        minX = options.hAxis.minValue;
-                    }
-                    if ('maxValue' in options.hAxis) {
-                        maxX = options.hAxis.maxValue;
-                    }
-                    if (minX != undefined || maxX != undefined) {
-                        layout.xaxis.range = [minX, maxX];
-                    }
-                }
-                var minY = undefined;
-                var maxY = undefined;
-                if ('vAxis' in options) {
-                    if ('minValue' in options.vAxis) {
-                        minY = options.vAxis.minValue;
-                    }
-                    else if ('minValues' in options.vAxis) {
-                        minY = options.vAxis.minValues[0];
-                    }
-                    if ('maxValue' in options.vAxis) {
-                        maxY = options.vAxis.maxValue;
-                    }
-                    else if ('maxValues' in options.vAxis) {
-                        maxY = options.vAxis.maxValues[0];
-                    }
-                    if (minY != undefined || maxY != undefined) {
-                        layout.yaxis.range = [minY, maxY];
-                    }
-                    if ('minValues' in options.vAxis) {
-                        minY = options.vAxis.minValues[1]; // for second axis below
-                    }
-                    if ('maxValues' in options.vAxis) {
-                        maxY = options.vAxis.maxValues[1]; // for second axis below
-                    }
-                }
-                if (options.xAxisTitle) {
-                    layout.xaxis.title = options.xAxisTitle;
-                }
-                if (options.xAxisSide) {
-                    layout.xaxis.side = options.xAxisSide;
-                }
-                if (options.yAxisTitle) {
-                    layout.yaxis.title = options.yAxisTitle;
-                }
-                if (options.yAxesTitles) {
-                    layout.yaxis.title = options.yAxesTitles[0];
-                    layout.yaxis2 = {
-                        title: options.yAxesTitles[1],
-                        side: 'right',
-                        overlaying: 'y'
-                    };
-                    if (minY != undefined || maxY != undefined) {
-                        layout.yaxis2.range = [minY, maxY];
-                    }
-                }
-                if ('width' in options) {
-                    layout.width = options.width;
-                }
-                if ('height' in options) {
-                    layout.height = options.height;
-                    if ('width' in options) {
-                        layout.autosize = false;
-                    }
-                }
-                var pdata = [];
-                if (this.chartStyle == 'line' || this.chartStyle == 'scatter') {
-                    var hoverCol = 0;
-                    var x = [];
-                    // First col is X, other cols are Y's and optional hover text only column
-                    var y = [];
-                    var hover = [];
-                    for (var c = 1; c < data.cols.length; c++) {
-                        x[c - 1] = [];
-                        y[c - 1] = [];
-                        var line = {
-                            x: x[c - 1],
-                            y: y[c - 1],
-                            name: data.cols[c].label,
-                            type: 'scatter',
-                            mode: this.chartStyle == 'scatter' ? 'markers' : 'lines'
-                        };
-                        if (options.hoverOnly) {
-                            hover[c - 1] = [];
-                            line.text = hover[c - 1];
-                            line.hoverinfo = 'text';
-                        }
-                        if (options.yAxesTitles && (c % 2) == 0) {
-                            line.yaxis = 'y2';
-                        }
-                        pdata.push(line);
-                    }
-                    for (var c = 1; c < data.cols.length; c++) {
-                        if (c == hoverCol) {
-                            continue;
-                        }
-                        for (var r = 0; r < data.rows.length; r++) {
-                            var entry = data.rows[r].c;
-                            if ('v' in entry[c]) {
-                                var xVal = entry[0].v;
-                                var yVal = entry[c].v;
-                                if (options.hoverOnly) {
-                                    // Each column is a dict with two values, one for y and one for
-                                    // hover. Extract these.
-                                    var hoverVal;
-                                    var yDict = yVal;
-                                    for (var prop in yDict) {
-                                        var val = yDict[prop];
-                                        if (prop == options.hoverOnly) {
-                                            hoverVal = val;
-                                        }
-                                        else {
-                                            yVal = val;
-                                        }
-                                    }
-                                    // TODO(gram): we may want to add explicit hover text this even without hoverOnly.
-                                    var xlabel = options.xAxisTitle || data.cols[0].label;
-                                    var ylabel = options.yAxisTitle || data.cols[c].label;
-                                    var prefix = '';
-                                    if (options.yAxisTitle) {
-                                        prefix += data.cols[c].label + ': ';
-                                    }
-                                    hover[c - 1].push(prefix +
-                                        options.hoverOnly + '=' + hoverVal + ', ' +
-                                        xlabel + '=' + xVal + ', ' +
-                                        ylabel + '=' + yVal);
-                                }
-                                x[c - 1].push(xVal);
-                                y[c - 1].push(yVal);
-                            }
-                        }
-                    }
-                }
-                else if (this.chartStyle == 'heatmap') {
-                    var size = 200 + data.cols.length * 50;
-                    if (size > 800)
-                        size = 800;
-                    layout.height = size;
-                    layout.width = size;
-                    layout.autosize = false;
-                    for (var i = 0; i < data.cols.length; i++) {
-                        xlabels[i] = data.cols[i].label;
-                    }
-                    var ylabels = [].concat(xlabels);
-                    // Plotly draws the first row at the bottom, not the top, so we need
-                    // to reverse the y and z array ordering.
-                    // We will need to tweak this a bit if we later support non-square maps.
-                    ylabels.reverse();
-                    var hovertext = [];
-                    var hoverx = options.xAxisTitle || 'x';
-                    var hovery = options.yAxisTitle || 'y';
-                    for (var i = 0; i < data.rows.length; i++) {
-                        var entry = data.rows[i].c;
-                        var row = [];
-                        var hoverrow = [];
-                        for (var j = 0; j < data.cols.length; j++) {
-                            row[j] = entry[j].v;
-                            hoverrow[j] = hoverx + '= ' + xlabels[j] + ', ' + hovery + '= ' +
-                                ylabels[i] + ': ' + row[j];
-                        }
-                        points[i] = row;
-                        hovertext[i] = hoverrow;
-                    }
-                    points.reverse();
-                    layout.hovermode = 'closest';
-                    pdata = [{
-                            x: xlabels,
-                            y: ylabels,
-                            z: points,
-                            type: 'heatmap',
-                            text: hovertext,
-                            hoverinfo: 'text'
-                        }];
-                    if (options.colorScale) {
-                        pdata[0].colorscale = [
-                            [0, options.colorScale.min],
-                            [1, options.colorScale.max]
-                        ];
-                    }
-                    else {
-                        pdata[0].colorscale = [
-                            [0, 'red'],
-                            [0.5, 'gray'],
-                            [1, 'blue']
-                        ];
-                    }
-                    if (options.hideScale) {
-                        pdata[0].showscale = false;
-                    }
-                    if (options.annotate) {
-                        layout.annotations = [];
-                        for (var i = 0; i < pdata[0].y.length; i++) {
-                            for (var j = 0; j < pdata[0].x.length; j++) {
-                                var currentValue = pdata[0].z[i][j];
-                                var textColor = (currentValue == 0.0) ? 'black' : 'white';
-                                var result = {
-                                    xref: 'x1',
-                                    yref: 'y1',
-                                    x: pdata[0].x[j],
-                                    y: pdata[0].y[i],
-                                    text: pdata[0].z[i][j].toPrecision(3),
-                                    showarrow: false,
-                                    font: {
-                                        color: textColor
-                                    }
-                                };
-                                layout.annotations.push(result);
-                            }
-                        }
-                    }
-                }
-                this.chartModule.newPlot(this.dom.id, pdata, layout, { displayModeBar: false });
-                if (this.readyHandler) {
-                    this.readyHandler();
-                }
-            };
-            PlotlyDriver.prototype.getStaticImage = function (callback) {
-                this.chartModule.Snapshot.toImage(document.getElementById(this.dom.id), { format: 'png' }).once('success', function (url) {
-                    callback(this.model, url);
-                });
-            };
-            PlotlyDriver.prototype.addChartReadyHandler = function (handler) {
-                this.readyHandler = handler;
-            };
-            return PlotlyDriver;
-        }(ChartLibraryDriver));
-        var GChartsDriver = /** @class */ (function (_super) {
-            __extends(GChartsDriver, _super);
-            function GChartsDriver(dom, chartStyle) {
-                var _this_1 = _super.call(this, dom, chartStyle) || this;
-                _this_1.nameMap = {
-                    annotation: 'AnnotationChart',
-                    area: 'AreaChart',
-                    columns: 'ColumnChart',
-                    bars: 'BarChart',
-                    bubbles: 'BubbleChart',
-                    calendar: 'Calendar',
-                    candlestick: 'CandlestickChart',
-                    combo: 'ComboChart',
-                    gauge: 'Gauge',
-                    geo: 'GeoChart',
-                    histogram: 'Histogram',
-                    line: 'LineChart',
-                    map: 'Map',
-                    org: 'OrgChart',
-                    paged_table: 'Table',
-                    pie: 'PieChart',
-                    sankey: 'Sankey',
-                    scatter: 'ScatterChart',
-                    stepped_area: 'SteppedAreaChart',
-                    table: 'Table',
-                    timeline: 'Timeline',
-                    treemap: 'TreeMap'
-                };
-                _this_1.scriptMap = {
-                    annotation: 'annotationchart',
-                    calendar: 'calendar',
-                    gauge: 'gauge',
-                    geo: 'geochart',
-                    map: 'map',
-                    org: 'orgchart',
-                    paged_table: 'table',
-                    sankey: 'sankey',
-                    table: 'table',
-                    timeline: 'timeline',
-                    treemap: 'treemap'
-                };
-                return _this_1;
-            }
-            GChartsDriver.prototype.requires = function (url, chartStyle) {
-                var chartScript = 'corechart';
-                if (chartStyle in this.scriptMap) {
-                    chartScript = this.scriptMap[chartStyle];
-                }
-                return [url + 'visualization!' + chartScript];
-            };
-            GChartsDriver.prototype.init = function (chartModule) {
-                _super.prototype.init.call(this, chartModule);
-                var constructor = this.chartModule[this.nameMap[this.chartStyle]];
-                this.chart = new constructor(this.dom);
-            };
-            GChartsDriver.prototype.error = function (message) {
-                this.chartModule.errors.addError(this.dom, 'Unable to render the chart', message, { showInTooltip: false });
-            };
-            GChartsDriver.prototype.draw = function (data, options) {
-                console.log('Drawing with options ' + JSON.stringify(options));
-                this.chart.draw(new this.chartModule.DataTable(data), options);
-            };
-            GChartsDriver.prototype.getStaticImage = function (callback) {
-                if (this.chart.getImageURI) {
-                    callback(this.chart.getImageURI());
-                }
-            };
-            GChartsDriver.prototype.addChartReadyHandler = function (handler) {
-                this.chartModule.events.addListener(this.chart, 'ready', handler);
-            };
-            GChartsDriver.prototype.addPageChangedHandler = function (handler) {
-                this.chartModule.events.addListener(this.chart, 'page', function (e) {
-                    handler(e.page);
-                });
-            };
-            return GChartsDriver;
-        }(ChartLibraryDriver));
-        var Chart = /** @class */ (function () {
-            function Chart(driver, dom, controlIds, base_options, refreshData, refreshInterval, totalRows) {
-                this.driver = driver;
-                this.dom = dom;
-                this.controlIds = controlIds;
-                this.base_options = base_options;
-                this.refreshData = refreshData;
-                this.refreshInterval = refreshInterval;
-                this.totalRows = totalRows || -1; // Total rows in all (server-side) data.
-                this.dataCache = {};
-                this.optionsCache = {};
-                this.hasIPython = false;
-                try {
-                    if (IPython && IPython.notebook) {
-                        this.hasIPython = true;
-                    }
-                }
-                catch (e) {
-                }
-                this.dom.innerHTML = '';
-                this.removeStaticChart();
-                this.addControls();
-                // Generate and add a new static chart once chart is ready.
-                var _this = this;
-                this.driver.addChartReadyHandler(function () {
-                    _this.addStaticChart();
-                });
-            }
-            // Convert any string fields that are date type to JS Dates.
-            Chart.prototype.convertDates = function (data) {
-                // Format timestamps in the same way as in dataframes.
-                var timestampFormatter = new this.driver.chartModule.DateFormat({
-                    'pattern': 'yyyy-MM-dd HH:mm:ss',
-                    'valueType': 'datetime',
-                    'timeZone': -new Date().getTimezoneOffset() / 60
-                });
-                // Timestamp formatter with fractional seconds.
-                // BQ and python store time down to the microsecond, but javascript Date
-                // only stores it to the millisecond.
-                var timestampWithFractionalSecondsFormatter = new this.driver.chartModule.DateFormat({
-                    'pattern': 'yyyy-MM-dd HH:mm:ss.SSS',
-                    'valueType': 'datetime',
-                    'timeZone': -new Date().getTimezoneOffset() / 60
-                });
-                // Javascript has terrible support for timezones. When Date objects get converted to
-                // strings, it always applies the local timezone. But we want dates and times to be
-                // printed in UTC so that they match the output of dataframes and other conversions that
-                // are happening in the kernel, which we assume is running in UTC in a docker container.
-                // In order to make this work, we add an offset to our Date objects in an amount equal
-                // to the local timezone offset from UTC so that when those Dates get output as a local
-                // time they will appear as the right UTC time. This is made more confusing by the fact
-                // that date, datetime, and timeofday data types are civil time for which timezone
-                // should not even apply - but since we are passing them along as Date objects, we
-                // pull the same trick with them. We add the 'f' field, for use by Google Charts when
-                // displaying tables, to ensure we have the right string there, but when doing things
-                // like line graphs, that field is not used, so we have to use the Date-offset trick
-                // in order to get dates and times to display correctly as UTC in graphs.
-                function dateAsUtc(localDate) {
-                    var year = localDate.getUTCFullYear();
-                    var month = localDate.getUTCMonth();
-                    var day = localDate.getUTCDate();
-                    var hours = localDate.getUTCHours();
-                    var minutes = localDate.getUTCMinutes();
-                    var seconds = localDate.getUTCSeconds();
-                    var millis = localDate.getUTCMilliseconds();
-                    return new Date(year, month, day, hours, minutes, seconds, millis);
-                }
-                var rows = data.rows;
-                for (var col = 0; col < data.cols.length; col++) {
-                    // date, datetime, and timeofday are civil times that are independent of timezone
-                    if (data.cols[col].type == 'date' || data.cols[col].type == 'datetime') {
-                        for (var row = 0; row < rows.length; row++) {
-                            var v = rows[row].c[col].v;
-                            rows[row].c[col].v = dateAsUtc(new Date(v));
-                            rows[row].c[col].f = v; // Display the string as-is to avoid timezone problems.
-                        }
-                    }
-                    else if (data.cols[col].type == 'timeofday') {
-                        for (var row = 0; row < rows.length; row++) {
-                            var v = rows[row].c[col].v;
-                            rows[row].c[col].f = v; // Display the string as-is to avoid timezone problems.
-                            var timeInSeconds = v.split('.')[0];
-                            rows[row].c[col].v = timeInSeconds.split(':').map(function (n) {
-                                return parseInt(n, 10);
-                            });
-                        }
-                    }
-                    else if (data.cols[col].type == 'timestamp') {
-                        data.cols[col].type = 'datetime';
-                        // Run through all the dates to determine how to format them.
-                        var formatter = timestampFormatter;
-                        for (var row = 0; row < rows.length; row++) {
-                            var v = new Date(rows[row].c[col].v);
-                            if (v.getTime() % 1000 != 0) {
-                                formatter = timestampWithFractionalSecondsFormatter;
-                                break;
-                            }
-                        }
-                        for (var row = 0; row < rows.length; row++) {
-                            var v = new Date(rows[row].c[col].v); // Timestamp is sent back as UTC time string.
-                            rows[row].c[col].f = formatter.formatValue(v);
-                            rows[row].c[col].v = dateAsUtc(v);
-                        }
-                    }
-                }
-            };
-            // Extend the properties in a 'base' object with the changes in an 'update' object.
-            // We can add properties or override properties but not delete yet.
-            Chart.extend = function (base, update) {
-                for (var p in update) {
-                    if (typeof base[p] !== 'object' || !base.hasOwnProperty(p)) {
-                        base[p] = update[p];
-                    }
-                    else {
-                        this.extend(base[p], update[p]);
-                    }
-                }
-            };
-            // Get the IPython cell associated with this chart.
-            Chart.prototype.getCell = function () {
-                if (!this.hasIPython) {
-                    return undefined;
-                }
-                var cells = IPython.notebook.get_cells();
-                for (var cellIndex in cells) {
-                    var cell = cells[cellIndex];
-                    if (cell.element && cell.element.length) {
-                        var element = cell.element[0];
-                        var chartDivs = element.getElementsByClassName('bqgc');
-                        if (chartDivs && chartDivs.length) {
-                            for (var i = 0; i < chartDivs.length; i++) {
-                                if (chartDivs[i].id == this.dom.id) {
-                                    return cell;
-                                }
-                            }
-                        }
-                    }
-                }
-                return undefined;
-            };
-            Chart.prototype.getRefreshHandler = function (useCache) {
-                var _this = this;
-                return function () {
-                    _this.refresh(useCache);
-                };
-            };
-            // Bind event handlers to the chart controls, if any.
-            Chart.prototype.addControls = function () {
-                if (!this.controlIds) {
-                    return;
-                }
-                var controlHandler = this.getRefreshHandler(true);
-                for (var i = 0; i < this.controlIds.length; i++) {
-                    var id = this.controlIds[i];
-                    var split = id.indexOf(':');
-                    var control;
-                    if (split >= 0) {
-                        // Checkbox group.
-                        var count = parseInt(id.substring(split + 1));
-                        var base = id.substring(0, split + 1);
-                        for (var j = 0; j < count; j++) {
-                            control = document.getElementById(base + j);
-                            control.disabled = !this.hasIPython;
-                            control.addEventListener('change', function () {
-                                controlHandler();
-                            });
-                        }
-                        continue;
-                    }
-                    // See if we have an associated control that needs dual binding.
-                    control = document.getElementById(id);
-                    if (!control) {
-                        // Kernel restart?
-                        return;
-                    }
-                    control.disabled = !this.hasIPython;
-                    var textControl = document.getElementById(id + '_value');
-                    if (textControl) {
-                        textControl.disabled = !this.hasIPython;
-                        textControl.addEventListener('change', function () {
-                            if (control.value != textControl.value) {
-                                control.value = textControl.value;
-                                controlHandler();
-                            }
-                        });
-                        control.addEventListener('change', function () {
-                            textControl.value = control.value;
-                            controlHandler();
-                        });
-                    }
-                    else {
-                        control.addEventListener('change', function () {
-                            controlHandler();
-                        });
-                    }
-                }
-            };
-            // Iterate through any widget controls and build up a JSON representation
-            // of their values that can be passed to the Python kernel as part of the
-            // magic to fetch data (also used as part of the cache key).
-            Chart.prototype.getControlSettings = function () {
-                var env = {};
-                if (this.controlIds) {
-                    for (var i = 0; i < this.controlIds.length; i++) {
-                        var id = this.controlIds[i];
-                        var parts = id.split('__');
-                        var varName = parts[1];
-                        var splitPoint = varName.indexOf(':');
-                        if (splitPoint >= 0) { // this is a checkbox group
-                            var count = parseInt(varName.substring(splitPoint + 1));
-                            varName = varName.substring(0, splitPoint);
-                            var cbBaseId = parts[0] + '__' + varName + ':';
-                            var list = [];
-                            env[varName] = list;
-                            for (var j = 0; j < count; j++) {
-                                var cb = document.getElementById(cbBaseId + j);
-                                if (!cb) {
-                                    // Stale refresh; user re-executed cell.
-                                    return undefined;
-                                }
-                                if (cb.checked) {
-                                    list.push(cb.value);
-                                }
-                            }
-                        }
-                        else {
-                            var e = document.getElementById(id);
-                            if (!e) {
-                                // Stale refresh; user re-executed cell.
-                                return undefined;
-                            }
-                            if (e && e.type == 'checkbox') {
-                                // boolean
-                                env[varName] = e.checked;
-                            }
-                            else {
-                                // picker/slider/text
-                                env[varName] = e.value;
-                            }
-                        }
-                    }
-                }
-                return env;
-            };
-            // Get a string representation of the current environment - i.e. control settings and
-            // refresh data. This is used as a cache key.
-            Chart.prototype.getEnvironment = function () {
-                var controls = this.getControlSettings();
-                if (controls == undefined) {
-                    // This means the user has re-executed the cell and our controls are gone.
-                    return undefined;
-                }
-                var env = { controls: controls };
-                Chart.extend(env, this.refreshData);
-                return JSON.stringify(env);
-            };
-            Chart.prototype.refresh = function (useCache) {
-                // TODO(gram): remember last cache key and don't redraw chart if cache
-                // key is the same unless this is an ML key and the number of data points has changed.
-                this.removeStaticChart();
-                var env = this.getEnvironment();
-                if (env == undefined) {
-                    // This means the user has re-executed the cell and our controls are gone.
-                    console.log('No chart control environment; abandoning refresh');
-                    return;
-                }
-                if (useCache && env in this.dataCache) {
-                    this.draw(this.dataCache[env], this.optionsCache[env]);
-                    return;
-                }
-                var code = '%_get_chart_data\n' + env;
-                // TODO: hook into the notebook UI to enable/disable 'Running...' while we fetch more data.
-                if (!this.cellElement) {
-                    var cell = this.getCell();
-                    if (cell && cell.element && cell.element.length == 1) {
-                        this.cellElement = cell.element[0];
-                    }
-                }
-                // Start the cell spinner in the notebook UI.
-                if (this.cellElement) {
-                    this.cellElement.classList.remove('completed');
-                }
-                var _this = this;
-                datalab.session.execute(code, function (error, response) {
-                    _this.handleNewData(env, error, response);
-                });
-            };
-            Chart.prototype.handleNewData = function (env, error, response) {
-                var data = response.data;
-                // Stop the cell spinner in the notebook UI.
-                if (this.cellElement) {
-                    this.cellElement.classList.add('completed');
-                }
-                if (data == undefined || data.cols == undefined) {
-                    error = 'No data';
-                }
-                if (error) {
-                    this.driver.error(error);
-                    return;
-                }
-                this.refreshInterval = response.refresh_interval;
-                if (this.refreshInterval == 0) {
-                    console.log('No more refreshes for ' + this.refreshData.name);
-                }
-                this.convertDates(data);
-                var options = this.base_options;
-                if (response.options) {
-                    // update any options. We need to make a copy so we don't break the base options.
-                    options = JSON.parse(JSON.stringify(options));
-                    Chart.extend(options, response.options);
-                }
-                // Don't update or keep refreshing this if control settings have changed.
-                var newEnv = this.getEnvironment();
-                if (env == newEnv) {
-                    console.log('Got refresh for ' + this.refreshData.name + ', ' + env);
-                    this.draw(data, options);
-                }
-                else {
-                    console.log('Stopping refresh for ' + env + ' as controls are now ' + newEnv);
-                }
-            };
-            // Remove a static chart (PNG) from the notebook and the DOM.
-            Chart.prototype.removeStaticChart = function () {
-                var cell = this.getCell();
-                if (cell) {
-                    var pngDivs = cell.element[0].getElementsByClassName('output_png');
-                    if (pngDivs) {
-                        for (var i = 0; i < pngDivs.length; i++) {
-                            pngDivs[i].innerHTML = '';
-                        }
-                    }
-                    var cell_outputs = cell.output_area.outputs;
-                    var changed = true;
-                    while (changed) {
-                        changed = false;
-                        for (var outputIndex in cell_outputs) {
-                            var output = cell_outputs[outputIndex];
-                            if (output.output_type == 'display_data' && output.metadata.source_id == this.dom.id) {
-                                cell_outputs.splice(outputIndex, 1);
-                                changed = true;
-                                break;
-                            }
-                        }
-                    }
-                }
-                else {
-                    // Not running under IPython; use a different approach and just clear the DOM.
-                    // Iterate through the IPython outputs...
-                    var outputDivs = document.getElementsByClassName('output_wrapper');
-                    if (outputDivs) {
-                        for (var i = 0; i < outputDivs.length; i++) {
-                            // ...and any chart outputs in each...
-                            var outputDiv = outputDivs[i];
-                            var chartDivs = outputDiv.getElementsByClassName('bqgc');
-                            if (chartDivs) {
-                                for (var j = 0; j < chartDivs.length; j++) {
-                                    // ...until we find the chart div ID we want...
-                                    if (chartDivs[j].id == this.dom.id) {
-                                        // ...then get any PNG outputs in that same output group...
-                                        var pngDivs = outputDiv.
-                                            getElementsByClassName('output_png');
-                                        if (pngDivs) {
-                                            for (var k = 0; k < pngDivs.length; k++) {
-                                                // ... and clear their contents.
-                                                pngDivs[k].innerHTML = '';
-                                            }
-                                        }
-                                        return;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            };
-            // Add a static chart (PNG) to the notebook. The notebook will in turn add it to the DOM when
-            // the notebook is opened.
-            Chart.prototype.addStaticChart = function () {
-                var _this = this;
-                this.driver.getStaticImage(function (img) {
-                    _this.handleStaticChart(img);
-                });
-            };
-            Chart.prototype.handleStaticChart = function (img) {
-                if (img) {
-                    var cell = this.getCell();
-                    if (cell) {
-                        var encoding = img.substr(img.indexOf(',') + 1); // strip leading base64 etc.
-                        var static_output = {
-                            metadata: {
-                                source_id: this.dom.id
-                            },
-                            data: {
-                                'image/png': encoding
-                            },
-                            output_type: 'display_data'
-                        };
-                        cell.output_area.outputs.push(static_output);
-                    }
-                }
-            };
-            // Set up a refresh callback if we have a non-zero interval and the DOM element still exists
-            // (i.e. output hasn't been cleared).
-            Chart.prototype.configureRefresh = function (refreshInterval) {
-                if (refreshInterval > 0 && document.getElementById(this.dom.id)) {
-                    window.setTimeout(this.getRefreshHandler(false), 1000 * refreshInterval);
-                }
-            };
-            // Cache the current data and options and draw the chart.
-            Chart.prototype.draw = function (data, options) {
-                var env = this.getEnvironment();
-                this.dataCache[env] = data;
-                this.optionsCache[env] = options;
-                if ('cols' in data) {
-                    this.driver.draw(data, options);
-                }
-                this.configureRefresh(this.refreshInterval);
-            };
-            return Chart;
-        }());
-        //-----------------------------------------------------------
-        // A special version of Chart for supporting paginated data.
-        var PagedTable = /** @class */ (function (_super) {
-            __extends(PagedTable, _super);
-            function PagedTable(driver, dom, controlIds, base_options, refreshData, refreshInterval, totalRows) {
-                var _this_1 = _super.call(this, driver, dom, controlIds, base_options, refreshData, refreshInterval, totalRows) || this;
-                _this_1.firstRow = 0; // Index of first row being displayed in page.
-                _this_1.pageSize = base_options.pageSize || 25;
-                if (_this_1.base_options.showRowNumber == undefined) {
-                    _this_1.base_options.showRowNumber = true;
-                }
-                _this_1.base_options.sort = 'disable';
-                var __this = _this_1;
-                _this_1.driver.addPageChangedHandler(function (page) {
-                    __this.handlePageEvent(page);
-                });
-                return _this_1;
-            }
-            // Get control settings for cache key. For paged table we add the first row offset of the table.
-            PagedTable.prototype.getControlSettings = function () {
-                var env = _super.prototype.getControlSettings.call(this);
-                if (env) {
-                    env.first = this.firstRow;
-                }
-                return env;
-            };
-            PagedTable.prototype.draw = function (data, options) {
-                var count = this.pageSize;
-                options.firstRowNumber = this.firstRow + 1;
-                options.page = 'event';
-                if (this.totalRows < 0) {
-                    // We don't know where the end is, so we should have 'next' button.
-                    options.pagingButtonsConfiguration = this.firstRow > 0 ? 'both' : 'next';
-                }
-                else {
-                    count = this.totalRows - this.firstRow;
-                    if (count > this.pageSize) {
-                        count = this.pageSize;
-                    }
-                    if (this.firstRow + count < this.totalRows) {
-                        // We are not on last page, so we should have 'next' button.
-                        options.pagingButtonsConfiguration = this.firstRow > 0 ? 'both' : 'next';
-                    }
-                    else {
-                        // We are on last page
-                        if (this.firstRow == 0) {
-                            options.pagingButtonsConfiguration = 'none';
-                            options.page = 'disable';
-                        }
-                        else {
-                            options.pagingButtonsConfiguration = 'prev';
-                        }
-                    }
-                }
-                _super.prototype.draw.call(this, data, options);
-            };
-            // Handle page forward/back events. Page will only be 0 or 1.
-            PagedTable.prototype.handlePageEvent = function (page) {
-                var offset = (page == 0) ? -1 : 1;
-                this.firstRow += offset * this.pageSize;
-                this.refreshData.first = this.firstRow;
-                this.refreshData.count = this.pageSize;
-                this.refresh(true);
-            };
-            return PagedTable;
-        }(Chart));
-        function convertListToDataTable(data) {
-            if (!data || !data.length) {
-                return { cols: [], rows: [] };
-            }
-            var firstItem = data[0];
-            var names = Object.keys(firstItem);
-            var columns = names.map(function (name) {
-                return { id: name, label: name, type: typeof firstItem[name] };
-            });
-            var rows = data.map(function (item) {
-                var cells = names.map(function (name) {
-                    return { v: item[name] };
-                });
-                return { c: cells };
-            });
-            return { cols: columns, rows: rows };
-        }
-        // The main render method, called from render() wrapper below. dom is the DOM element
-        // for the chart, model is a set of parameters from Python, and options is a JSON
-        // set of options provided by the user in the cell magic body, which takes precedence over
-        // model. An initial set of data can be passed in as a final optional parameter.
-        function _render(driver, dom, chartStyle, controlIds, data, options, refreshData, refreshInterval, totalRows) {
-            require(["base/js/namespace"], function (Jupyter) {
-                var url = "datalab/";
-                require(driver.requires(url, chartStyle), function ( /* ... */) {
-                    // chart module should be last dependency in require() call...
-                    var chartModule = arguments[arguments.length - 1]; // See if it needs to be a member.
-                    driver.init(chartModule);
-                    options = options || {};
-                    var chart;
-                    if (chartStyle == 'paged_table') {
-                        chart = new PagedTable(driver, dom, controlIds, options, refreshData, refreshInterval, totalRows);
-                    }
-                    else {
-                        chart = new Chart(driver, dom, controlIds, options, refreshData, refreshInterval, totalRows);
-                    }
-                    chart.convertDates(data);
-                    chart.draw(data, options);
-                    // Do we need to do anything to prevent it getting GCed?
-                });
-            });
-        }
-        function render(driverName, dom, events, chartStyle, controlIds, data, options, refreshData, refreshInterval, totalRows) {
-            // If this is HTML from nbconvert we can't support paging so add some text making this clear.
-            if (chartStyle == 'paged_table' && document.hasOwnProperty('_in_nbconverted')) {
-                chartStyle = 'table';
-                var p = document.createElement("div");
-                p.innerHTML = '<br>(Truncated to first page of results)';
-                dom.parentNode.insertBefore(p, dom.nextSibling);
-            }
-            // Allocate an appropriate driver.
-            var driver;
-            if (driverName == 'plotly') {
-                driver = new PlotlyDriver(dom, chartStyle);
-            }
-            else if (driverName == 'gcharts') {
-                driver = new GChartsDriver(dom, chartStyle);
-            }
-            else {
-                throw new Error('Unsupported chart driver ' + driverName);
-            }
-            // Get data in form needed for GCharts.
-            // We shouldn't need this; should be handled by caller.
-            if (!data.cols && !data.rows) {
-                data = this.convertListToDataTable(data);
-            }
-            // If there is no IPython instance, assume that this is being executed in a sandboxed output
-            // environment and render immediately.
-            // If we have a datalab session, we can go ahead and draw the chart; if not, add code to do the
-            // drawing to an event handler for when the kernel is ready.
-            if (!this.hasIPython || IPython.notebook.kernel.is_connected()) {
-                _render(driver, dom, chartStyle, controlIds, data, options, refreshData, refreshInterval, totalRows);
-            }
-            else {
-                // If the kernel is not connected, wait for the event.
-                events.on('kernel_ready.Kernel', function (e) {
-                    _render(driver, dom, chartStyle, controlIds, data, options, refreshData, refreshInterval, totalRows);
-                });
-            }
-        }
-        Charting.render = render;
-    })(Charting || (Charting = {}));
-    return Charting;
-});
-</script>
-<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="element">
-/*
- * Copyright 2015 Google Inc. All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- * in compliance with the License. You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under the License
- * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and limitations under
- * the License.
- */
-define(["require", "exports"], function (require, exports) {
-    "use strict";
-    /// <reference path="../../../../externs/ts/require/require.d.ts" />
-    var Element;
-    (function (Element) {
-        // RequireJS plugin to resolve DOM elements.
-        'use strict';
-        var pendingCallbacks = null;
-        function resolve(cbInfo) {
-            cbInfo.cb(document.getElementById(cbInfo.name));
-        }
-        function domReadyCallback() {
-            if (pendingCallbacks) {
-                // Clear out pendingCallbacks, so any future requests are immediately resolved.
-                var callbacks = pendingCallbacks;
-                pendingCallbacks = null;
-                callbacks.forEach(resolve);
-            }
-        }
-        function load(name, req, loadCallback, config) {
-            if (config.isBuild) {
-                loadCallback(null);
-            }
-            else {
-                var cbInfo = { name: name, cb: loadCallback };
-                if (document.readyState == 'loading') {
-                    if (!pendingCallbacks) {
-                        pendingCallbacks = [];
-                        document.addEventListener('DOMContentLoaded', domReadyCallback, false);
-                    }
-                    pendingCallbacks.push(cbInfo);
-                }
-                else {
-                    resolve(cbInfo);
-                }
-            }
-        }
-        Element.load = load;
-    })(Element || (Element = {}));
-    return Element;
-});
-</script>
-<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="style">
-/*
- * Copyright 2015 Google Inc. All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- * in compliance with the License. You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under the License
- * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and limitations under
- * the License.
- */
-define(["require", "exports"], function (require, exports) {
-    "use strict";
-    // RequireJS plugin to load stylesheets.
-    /// <reference path="../../../../externs/ts/require/require.d.ts" />
-    var Style;
-    (function (Style) {
-        'use strict';
-        // An object containing the set of loaded stylesheets, so as to avoid reloading.
-        var loadedStyleSheets = {};
-        // An object containing stylesheets to load, once the DOM is ready.
-        var pendingStyleSheets = null;
-        function addStyleSheet(url) {
-            loadedStyleSheets[url] = true;
-            var stylesheet = document.createElement('link');
-            stylesheet.type = 'text/css';
-            stylesheet.rel = 'stylesheet';
-            stylesheet.href = url;
-            document.getElementsByTagName('head')[0].appendChild(stylesheet);
-        }
-        function domReadyCallback() {
-            if (pendingStyleSheets) {
-                // Clear out pendingStyleSheets, so any future adds are immediately processed.
-                var styleSheets = pendingStyleSheets;
-                pendingStyleSheets = null;
-                styleSheets.forEach(addStyleSheet);
-            }
-        }
-        function load(url, req, loadCallback, config) {
-            if (config.isBuild) {
-                loadCallback(null);
-            }
-            else {
-                // Go ahead and immediately/optimistically resolve this, since the resolved value of a
-                // stylesheet is never interesting.
-                setTimeout(loadCallback, 0);
-                // Only load a specified stylesheet once for the lifetime of this page.
-                if (loadedStyleSheets[url]) {
-                    return;
-                }
-                loadedStyleSheets[url] = true;
-                if (document.readyState == 'loading') {
-                    if (!pendingStyleSheets) {
-                        pendingStyleSheets = [];
-                        document.addEventListener('DOMContentLoaded', domReadyCallback, false);
-                    }
-                    pendingStyleSheets.push(url);
-                }
-                else {
-                    addStyleSheet(url);
-                }
-            }
-        }
-        Style.load = load;
-    })(Style || (Style = {}));
-    return Style;
-});
-</script>
-<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="visualization">
-/*
- * Copyright 2015 Google Inc. All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- * in compliance with the License. You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under the License
- * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and limitations under
- * the License.
- */
-define(["require", "exports"], function (require, exports) {
-    "use strict";
-    /// <reference path="../../../../externs/ts/require/require.d.ts" />
-    var Visualization;
-    (function (Visualization) {
-        'use strict';
-        // Queued packages to load until the google api loader itself has not been loaded.
-        var queue = {
-            packages: [],
-            callbacks: []
-        };
-        function loadGoogleApiLoader(callback) {
-            // Visualization packages are loaded using the Google loader.
-            // The loader URL itself must contain a callback (by name) that it invokes when its loaded.
-            var callbackName = '__googleApiLoaderCallback';
-            window[callbackName] = callback;
-            var script = document.createElement('script');
-            script.type = 'text/javascript';
-            script.async = true;
-            script.src = 'https://www.google.com/jsapi?callback=' + callbackName;
-            document.getElementsByTagName('head')[0].appendChild(script);
-        }
-        function invokeVisualizationCallback(cb) {
-            cb(google.visualization);
-        }
-        function loadVisualizationPackages(names, callbacks) {
-            if (names.length) {
-                var visualizationOptions = {
-                    packages: names,
-                    callback: function () { callbacks.forEach(invokeVisualizationCallback); }
-                };
-                google.load('visualization', '1', visualizationOptions);
-            }
-        }
-        loadGoogleApiLoader(function () {
-            if (queue) {
-                loadVisualizationPackages(queue.packages, queue.callbacks);
-                queue = null;
-            }
-        });
-        function load(name, req, callback, config) {
-            if (config.isBuild) {
-                callback(null);
-            }
-            else {
-                if (queue) {
-                    // Queue the package and associated callback to load, once the loader has been loaded.
-                    queue.packages.push(name);
-                    queue.callbacks.push(callback);
-                }
-                else {
-                    // Loader has already been loaded, so go ahead and load the specified package.
-                    loadVisualizationPackages([name], [callback]);
-                }
-            }
-        }
-        Visualization.load = load;
-    })(Visualization || (Visualization = {}));
-    return Visualization;
-});
-document._in_nbconverted = true;
-</script>
-
-<style type="text/css">
-/*
-Placeholder for custom user CSS
-
-mainly to be overridden in profile/static/custom/custom.css
-
-This will always be an empty file in IPython
-*/
-
-/*for the error , connecting & renaming window*/
-
-[dir="rtl"] .modal-footer {
-	text-align : left !important;
-}
-
-[dir="rtl"] .close {
-	float : left;
-}
-
-[dir="rtl"] .fa-step-forward::before {
-    content: "\f048";
-}
-/*
- * Copyright 2015 Google Inc. All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- * in compliance with the License. You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under the License
- * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and limitations under
- * the License.
- */
-
-table.google-visualization-table-table, table.dataframe {
-  font-family: inherit;
-  font-size: smaller;
-}
-tr.gchart-table-row {
-}
-tr.gchart-table-headerrow, table.dataframe thead th {
-  font-weight: bold;
-  background-color: #e7e7e7;
-}
-tr.gchart-table-oddrow, table.dataframe tr:nth-child(odd) {
-  background-color: #f7f7f7;
-}
-tr.gchart-table-selectedTableRow {
-  background-color: #e3f2fd;
-}
-tr.gchart-table-hoverrow, table.dataframe tr:hover {
-  background-color: #bbdefb;
-}
-td.gchart-table-cell, table.dataframe td {
-  border: solid 1px #cfcfcf;
-}
-td.gchart-table-rownumcell, table.dataframe tr th {
-  border: solid 1px #cfcfcf;
-  color: #999;
-}
-th.gchart-table-headercell, table.dataframe th {
-  border: solid 1px #cfcfcf;
-}
-div.bqgc {
-  display: flex;
-  justify-content: center;
-}
-div.bqgc img {
-  max-width: none; // Fix the conflict with maps and Bootstrap that messes up zoom controls.
-}
-.gchart-slider {
-  width: 80%;
-  float: left;
-}
-.gchart-slider-value {
-  text-align: center;
-  float: left;
-  width: 20%;
-}
-.gchart-control {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-.gchart-controls {
-  font-size: 14px;
-  color: #333333;	 
-  background: #f4f4f4;
-  padding: 10px;
-  width: 180px;
-  float: left;
-}
-.bqgc {
-  padding: 0;
-  max-width: 100%;
-}
-.bqgc-controlled {
-  display: flex;
-  flex-direction: row;
-  justify-content:space-between;
-}
-.bqgc-container {
-  display: block;
-}
-.bqgc-ml-metrics {
-  display: flex;
-  flex-direction: row;
-  justify-content:left;
-}
-/*
- * Copyright 2015 Google Inc. All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- * in compliance with the License. You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under the License
- * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and limitations under
- * the License.
- */
-
-* {
-  padding: 0px;
-  margin: 0px;
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-}
-body {
-  font-family: 'Open Sans', Helvetica, sans-serif;
-  font-size: 14px;
-  min-width: 760px;
-}
-
-/* Layout */
-#app {
-  position: absolute;
-  overflow: auto;
-  height: 100%;
-  left: 0px;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-flow: column nowrap;
-  flex-flow: column nowrap;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  align-items: stretch;
-  -webkit-align-content: space-between;
-  align-content: space-between;
-}
-#appBar {
-  background-color: #333;
-  box-shadow: 0 0 8px 0 #000;
-  -webkit-order: 1;
-  order: 1;
-  -webkit-flex: 0 1 auto;
-  flex: 0 1 auto;
-  -webkit-align-self: auto;
-  align-self: auto;
-  height: 48px;
-  min-height: 48px;
-  padding-left: 10px;
-  padding-right: 10px;
-  position: relative;
-  z-index: 10;
-  display: flex;
-  justify-content: space-between;
-}
-#site {
-  -webkit-order: 2;
-  order: 2;
-  position: relative;
-  height: 100% !important;
-}
-#appContent {
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  height: 100%;
-  -webkit-order: 2;
-  order: 2;
-  -webkit-flex: 1 1 auto;
-  flex: 1 1 auto;
-  -webkit-align-self: stretch;
-  align-self: stretch;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-flow: column nowrap;
-  flex-flow: column nowrap;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  align-items: stretch;
-  -webkit-align-content: space-between;
-  align-content: space-between;
-}
-#toolbarArea, #contentArea {
-  position: relative;
-  -webkit-align-self: stretch;
-  align-self: stretch;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-flow: row nowrap;
-  flex-flow: row nowrap;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  align-items: stretch;
-  -webkit-align-content: space-between;
-  align-content: space-between;
-}
-#toolbarArea {
-  -webkit-order: 1;
-  order: 1;
-  justify-content: space-between;
-}
-#contentArea {
-  height: 100%;
-  -webkit-order: 2;
-  order: 2;
-  -webkit-flex: 1 1 auto;
-  flex: 1 1 auto;
-  overflow: auto;
-}
-#mainArea {
-  -webkit-order: 1;
-  order: 1;
-  -webkit-flex: 70%;
-  flex: 70%;
-  -webkit-align-self: auto;
-  align-self: auto;
-  position: relative;
-  min-width: 200px;
-  overflow: auto;
-}
-#sidebarArea {
-  -webkit-order: 2;
-  order: 2;
-  -webkit-flex: 30%;
-  flex: 30%;
-  -webkit-align-self: auto;
-  align-self: auto;
-  position: relative;
-  padding-top: 10px;
-  min-width: 100px;
-  overflow: auto;
-}
-#sidebarToolbar.larger {
-  -webkit-flex-grow: 3;
-  flex-grow: 3;
-}
-#sidebarArea.larger {
-  -webkit-flex: 50%;
-  flex: 50%;
-}
-#mainToolbar, #sidebarToolbar {
-  z-index: 8;
-}
-#mainToolbar {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-#updateMessageArea {
-  display: none;
-  margin-bottom: 0px;
-}
-.notebookMainContent, #sidebarContent {
-  overflow: auto;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-.fileMainContent {
-  overflow: auto;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-.treeMainContent {
-  overflow: auto;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-#sidebarContent {
-  padding: 10px 20px;
-}
-#notebook-container {
-  padding: 10px 35px 70px 35px;
-}
-.container {
-  min-width: 200px;
-  width: 100%;
-}
-
-/* Header and Toolbar */
-div.btn-group a {
-  cursor: default;
-}
-#appBar .toolbar-btn {
-  background-color: transparent;
-  border: none;
-  height: 48px;
-  font-size: 16px;
-  padding: 4px;
-  margin-right: 10px;
-  margin-left: 0px;
-}
-#appbar div.btn-group {
-  margin-left: 0px !important;
-}
-div.btn-toolbar {
-  margin: 0px;
-}
-div.btn-toolbar .toolbar-btn {
-  background-color: transparent;
-  border: none;
-  font-family: 'Open Sans', Helvetica, sans-serif;
-  font-weight: normal;
-  font-size: 14px;
-  outline: solid 1px transparent !important;
-  height: 46px;
-  margin-left: 0px;
-  padding: 0px 8px;
-  cursor: pointer;
-  vertical-align: middle;
-}
-div.btn-toolbar .toolbar-btn:hover, div.btn-toolbar .toolbar-btn:focus {
-  border: none;
-}
-div.btn-toolbar .toolbar-btn:focus {
-  outline: solid 1px transparent !important;
-}
-div.btn-toolbar .toolbar-btn.dropdown-toggle {
-  padding-left: 2px;
-  padding-right: 2px;
-  margin-left: -2px;
-}
-#accountDropdown div div {
-  margin: 10px;
-}
-#signOutGroup ul li {
-  padding: 5px 0px 0px 0px;
-}
-#idleTimeoutUpdateButton {
-  padding: 1px;
-  border-width: 2px;
-  margin-top: -2px;
-}
-div.btn-toolbar .toolbar-btn.active {
-  font-weight: bold;
-  border: none;
-  box-shadow: none;
-}
-i.material-icons {
-  font-size: 18px !important;
-  vertical-align: sub !important;
-}
-#toggleSidebarButton {
-  margin-bottom: 8px;
-  background: none;
-  border: none;
- }
-
-/* Suppress the ipywidget Widgets menu until we figure out how to handle it. */
-#help_menu_container {
-  display: none;
-}
-
-#logo {
-  margin-left: 12px;
-  flex: 0 0 auto;
-}
-#logo, #logo img {
-  height: 32px;
-  vertical-align: middle;
-  line-height: 48px;
-  padding: 0px;
-  cursor: pointer;
-}
-
-/* List page */
-#button-select-all {
-  border-color: transparent;
-  box-shadow: none;
-  background-color: transparent;
-  min-width: 20px;
-}
-.list_placeholder {
-  font-weight: normal;
-}
-.alternate_upload input.fileinput {
-  visibility: hidden;
-  height: 40px;
-}
-#uploadButton {
-  height: 28px;
-  padding: 4px 8px;
-  margin: 0;
-}
-#editorButton {
-  display: none;
-}
-/* Notebook page */
-#notebook {
-  font-family: 'Open Sans';
-  font-size: 16px !important;
-  padding: 0px;
-}
-#ipython-main-app {
-  position: relative;
-  padding: 10px;
-}
-div.end_space {
-  min-height: 20px;
-}
-#notebook-container {
-  box-shadow: none;
-}
-#notebook_name {
-  font-weight: bold;
-  font-size: 16px;
-  line-height: inherit;
-  padding: 0px;
-  margin-left: 24px;
-}
-#notebook_name:hover {
-  background-color: transparent;
-}
-span.save_widget label.rename {
-  vertical-align: text-top;
-  cursor: pointer;
-}
-span.save_widget span.filename {
-  margin-left: 0px;
-  border: none;
-  padding: 0px;
-  margin: 0px;
-}
-span.save_widget {
-  flex: 1 1 auto;
-  margin-top: 10px;
-  overflow: hidden;
-  white-space: nowrap;
-}
-div.right-toolbar {
-  flex: 0 0 auto;
-}
-span.autosave_status {
-  font-size: 13px;
-  line-height: 35px;
-  vertical-align: middle;
-  display: inline-block;
-}
-
-/* Edit page */
-#texteditor-backdrop {
-  padding: 0px;
-  height: 100%;
-}
-
-#texteditor-backdrop .CodeMirror {
-  height: 100% !important;
-}
-
-/* Terminals page */
-.terminal-app #site {
-  background-color: #222;
-}
-.terminal-app #terminado-container {
-  margin: 20px;
-  width: calc(100vw - 40px);
-  height: calc(100% - 40px);
-}
-.terminal-app .terminal, .terminal-app {
-  line-height: 1.1;
-  width: 100%;
-  height: 100%;
-}
-
-/* Cell Customizations */
-div.cell {
-  border: solid 1px transparent;
-  border-radius: 0px;
-  padding: 0px;
-  padding-left: 0px;
-  margin-bottom: 10px;
-  position: relative;
-}
-div.cell.selected, div.cell.text_cell.selected, div.cell.code_cell.selected {
-  background: none;
-  padding-left: 0px;
-}
-.edit_mode div.cell.text_cell.selected, .edit_mode div.code_cell.selected {
-  padding-left: 0px;
-}
-div.code_cell div.input {
-  border-left: solid 4px #ddd;
-}
-div.code_cell.session div.input {
-  border-left: solid 4px #ddd;
-}
-div.code_cell.running div.input {
-  border-left: solid 4px #ddd;
-}
-div.code_cell div.input {
-  border-top: none;
-}
-div.input_area {
-  border: none;
-}
-div.tooltiptext {
-  height: auto;
-  overflow: visible;
-}
-div.status {
-  margin-top: 4px;
-  margin-left: 38px;
-  font-family: 'Open Sans', Helvetica, sans-serif;
-  font-size: 12px;
-  font-weight: bold;
-  color: #aaa;
-}
-div.status div.progress {
-  width: 150px;
-  height: 8px;
-  margin-bottom: 4px
-}
-div.output_text {
-  line-height: inherit;
-}
-div.selected div.minitoolbar, .cellhidden>div.minitoolbar, .codehidden>div.minitoolbar,
-div.cellhidden div.cellPlaceholder {
-  display: block;
-}
-div.cellhidden div.input, div.cellhidden div.output_wrapper, .codehidden * div.inner_cell {
-  display: none;
-}
-.codehidden>div.input {
-  height: 33px;
-  border: 1px;
-  border-style: solid;
-  border-color: #ddd;
-}
-div.input {
-  position: relative;
-}
-div.input_prompt, div.output_prompt, div.out_prompt_overlay {
-  min-width: 0px;
-  display: none;
-  padding: 0px;
-  border: none;
-}
-div.input_prompt {
-  min-width: 30px;
-}
-div.output_area {
-  margin-top: 4px;
-  margin-left: 38px;
-}
-div.output_area div.prompt {
-  display: none;
-}
-div.output_subarea {
-  max-width: inherit;
-}
-div.output_scroll {
-  border-radius: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-div.rendered_html h1, div.rendered_html h2, div.rendered_html h3,
-div.rendered_html h4, div.rendered_html h5, div.rendered_html h6 {
-  font-family: 'Open Sans', Lato, Helvetica, sans-serif;
-  letter-spacing: -1px;
-  margin-top: 0px !important;
-}
-a.anchor-link {
-  display: none;
-}
-div.minitoolbar {
-  position: absolute;
-  left: -30px;
-  display: none;
-}
-button.minitoolbar-toggle {
-  width: 25px;
-  height: 25px;
-  padding: 0;
-}
-div.minitoolbar>span {
-  padding: 2px;
-  font-size: xx-small;
-  color: #888;
-}
-div.cellPlaceholder>div>pre {
-  background-color: inherit;
-  margin: 0px;
-  overflow: hidden;
-}
-div.cellPlaceholder {
-  width: 100%;
-  text-align: left;
-  display: none;
-}
-
-/* Notebook list header */
-#notebook_list_header {
-  display: flex;
-}
-#tree-selector {
-  flex: 0 0;
-}
-#project_name {
-  flex: 1 1;
-  padding: 5px;
-}
-#find-file-container {
-  padding: 2px;
-  font-weight: normal;
-}
-#tree-filter {
-  margin: 0px;
-  padding: 5px;
-}
-.ui-autocomplete {
-  position: absolute !important;
-  top: 100% !important;
-  left: inherit !important;
-  right: 0px !important;
-  width: 75vw !important;
-  z-index: 10 !important;
-  list-style: none;
-  margin-top: 2px;
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
-}
-.ui-menu .ui-menu-item a {
-    display: block;
-    padding: 10px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-.ui-menu .ui-menu-item a:hover, .ui-menu-item .ui-state-focus {
-  text-decoration: none;
-}
-.ui-autocomplete > .autocomplete-message {
-  text-align: center;
-  font-style: italic;
-  color: #888;
-}
-
-/* CodeMirror Customization */
-pre, code, .CodeMirror, .CodeMirror pre, .CodeMirror-linenumber {
-  font-family: 'Source Code Pro';
-  font-size: 15px !important;
-}
-.CodeMirror pre, .CodeMirror-linenumber {
-  line-height: 1.4 !important;
-}
-.CodeMirror-cursor {
-  border-left: 2px solid #222;
-}
-.CodeMirror-linenumber {
-  visibility: hidden;
-}
-div.selected .CodeMirror-linenumber, div#texteditor-container .CodeMirror-linenumber {
-  visibility: visible;
-}
-.CodeMirror-matchingbracket {
-  color: inherit !important;
-  outline: solid 1px #888;
-}
-.cm-keyword, .cm-operator {
-  font-weight: normal !important;
-}
-.cm-comment {
-  font-style: normal !important;
-}
-.cm-header-1, .cm-header-2, .cm-header-3, .cm-header-4, .cm-header-5, .cm-header-6 {
-  font-family: inherit !important;
-  font-size: inherit !important;
-  font-weight: bold !important;
-}
-
-div.modal-dialog pre, div.modal-dialog code, #help code, #help pre {
-  font-size: 13px !important;
-}
-#help {
-  font-family: 'Source Code Pro', monospace;
-}
-#help pre {
-  border: none;
-}
-
-@media print {
-  #appBar, #sidebarToolbar, #sidebarContent, #mainToolbar {
-    display: none;
-  }
-  #app, #appContent {
-    display: inherit;
-  }
-  #mainContent {
-    position: inherit;
-  }
-  div.cell.selected {
-    border: none !important;
-    box-shadow: none !important;
-  }
-}
-
-/* Responsive Design */
-@media screen and (max-width: 1220px) {
-  span.toolbar-text {
-    display: none;
-  }
-}
-</style>
-
-<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
-.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
-.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
-.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
-.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
-</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
-#MathJax_About.MathJax_MousePost {outline: none}
-.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
-.MathJax_MenuItem {padding: 1px 2em; background: transparent}
-.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
-.MathJax_MenuActive .MathJax_MenuArrow {color: white}
-.MathJax_MenuArrow.RTL {left: .5em; right: auto}
-.MathJax_MenuCheck {position: absolute; left: .7em}
-.MathJax_MenuCheck.RTL {right: .7em; left: auto}
-.MathJax_MenuRadioCheck {position: absolute; left: .7em}
-.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
-.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
-.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
-.MathJax_MenuDisabled {color: GrayText}
-.MathJax_MenuActive {background-color: #606872; color: white}
-.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
-.MathJax_ContextMenu:focus {outline: none}
-.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
-#MathJax_AboutClose {top: .2em; right: .2em}
-.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
-.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
-.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
-.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
-.MathJax_MenuClose:hover span {background-color: #CCC!important}
-.MathJax_MenuClose:hover:focus {outline: none}
-</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
-</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
-.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
-</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
-#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
-#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
-#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
-</style><style type="text/css">.MathJax_Preview {color: #888}
-#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
-#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
-.MathJax_Error {color: #CC0000; font-style: italic}
-</style><style type="text/css">.MJXp-script {font-size: .8em}
-.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
-.MJXp-bold {font-weight: bold}
-.MJXp-italic {font-style: italic}
-.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
-.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
-.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
-.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
-.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
-.MJXp-largeop {font-size: 150%}
-.MJXp-largeop.MJXp-int {vertical-align: -.2em}
-.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
-.MJXp-display {display: block; text-align: center; margin: 1em 0}
-.MJXp-math span {display: inline-block}
-.MJXp-box {display: block!important; text-align: center}
-.MJXp-box:after {content: " "}
-.MJXp-rule {display: block!important; margin-top: .1em}
-.MJXp-char {display: block!important}
-.MJXp-mo {margin: 0 .15em}
-.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
-.MJXp-denom {display: inline-table!important; width: 100%}
-.MJXp-denom > * {display: table-row!important}
-.MJXp-surd {vertical-align: top}
-.MJXp-surd > * {display: block!important}
-.MJXp-script-box > *  {display: table!important; height: 50%}
-.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
-.MJXp-script-box > *:last-child > * {vertical-align: bottom}
-.MJXp-script-box > * > * > * {display: block!important}
-.MJXp-mphantom {visibility: hidden}
-.MJXp-munderover, .MJXp-munder {display: inline-table!important}
-.MJXp-over {display: inline-block!important; text-align: center}
-.MJXp-over > * {display: block!important}
-.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
-.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
-.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
-.MJXp-mtr {display: table-row!important}
-.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
-.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
-.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
-.MJXp-mlabeledtr {display: table-row!important}
-.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
-.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
-.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
-.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
-.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
-.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
-.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
-.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
-.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
-.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
-.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
-.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
-.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
-.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
-</style></head>
-<body data-gr-c-s-loaded="true" style=""><div id="MathJax_Message" style="display: none;"></div>
+    <!-- End of mathjax configuration --></head>
+<body>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Assignment-1---BA770-(Fall-2019)">Assignment 1 - BA770 (Fall 2019)<a class="anchor-link" href="https://8081-dot-4725377-dot-devshell.appspot.com/nbconvert/html/datalab/notebooks/Assignment-1.ipynb#Assignment-1---BA770-(Fall-2019)">¶</a></h2><p>Please note that this assignment captures topics from classes 2 &amp; 3. You should run your queries in BigQuery or Datalab and submit the Datalab notebook along with your responses inside the Questrom Tools course site under "tests &amp; quizzes" section. You should not email the notebook to your TA or the instructor.</p>
+<h2 id="Assignment-1---BA775-(Fall-2020)">Assignment 1 - BA775 (Fall 2020)<a class="anchor-link" href="#Assignment-1---BA775-(Fall-2020)">&#182;</a></h2><p>Please note that this assignment captures topics from classes 2 &amp; 3. You should run your queries in BigQuery or an AI Platform notebook and submit the answers along with your code in the Questrom Tools course site under "tests &amp; quizzes" section.</p>
 
 </div>
 </div>
@@ -15109,7 +13085,7 @@ div.modal-dialog pre, div.modal-dialog code, #help code, #help pre {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Question-1">Question 1<a class="anchor-link" href="https://8081-dot-4725377-dot-devshell.appspot.com/nbconvert/html/datalab/notebooks/Assignment-1.ipynb#Question-1">¶</a></h3><p>Using the following table (<code>bigquery-public-data.baseball.schedules</code>) which game had the biggest attendance in 2016?</p>
+<h3 id="Question-1">Question 1<a class="anchor-link" href="#Question-1">&#182;</a></h3><p>Using the following table (<code>bigquery-public-data.baseball.schedules</code>) which baseball game had the biggest attendance in 2016?</p>
 
 </div>
 </div>
@@ -15119,7 +13095,7 @@ div.modal-dialog pre, div.modal-dialog code, #help code, #help pre {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="o">%%</span><span class="k">bq</span> query
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">bigquery</span>
 SELECT * FROM `bigquery-public-data.baseball.schedules` LIMIT 5
 </pre></div>
 
@@ -15138,55 +13114,141 @@ SELECT * FROM `bigquery-public-data.baseball.schedules` LIMIT 5
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-    <div class="bqtv" id="1_156463454086"><table><tbody><tr><th>gameId</th><th>gameNumber</th><th>seasonId</th><th>year</th><th>type</th><th>dayNight</th><th>duration</th><th>duration_minutes</th><th>homeTeamId</th><th>homeTeamName</th><th>awayTeamId</th><th>awayTeamName</th><th>startTime</th><th>attendance</th><th>status</th><th>created</th></tr><tr><td>e14b6493-9e7f-404f-840a-8a680cc364bf</td><td>1</td><td>565de4be-dc80-4849-a7e1-54bc79156cc8</td><td>2016</td><td>REG</td><td>D</td><td>3:07</td><td>187</td><td>03556285-bdbb-4576-a06d-42f71f46ddc5</td><td>Marlins</td><td>55714da8-fcaf-4574-8443-59bfb511a524</td><td>Cubs</td><td>2016-06-26 17:10:00</td><td>27318</td><td>closed</td><td>2016-10-06 06:25:15</td></tr><tr><td>1f32b347-cbcb-4c31-a145-0e685306d168</td><td>1</td><td>565de4be-dc80-4849-a7e1-54bc79156cc8</td><td>2016</td><td>REG</td><td>D</td><td>3:09</td><td>189</td><td>03556285-bdbb-4576-a06d-42f71f46ddc5</td><td>Marlins</td><td>55714da8-fcaf-4574-8443-59bfb511a524</td><td>Cubs</td><td>2016-06-25 20:10:00</td><td>29457</td><td>closed</td><td>2016-10-06 06:25:15</td></tr><tr><td>0c2292d1-7398-48be-bf8e-b41dad5e1a43</td><td>1</td><td>565de4be-dc80-4849-a7e1-54bc79156cc8</td><td>2016</td><td>REG</td><td>D</td><td>2:45</td><td>165</td><td>12079497-e414-450a-8bf2-29f91de646bf</td><td>Braves</td><td>55714da8-fcaf-4574-8443-59bfb511a524</td><td>Cubs</td><td>2016-06-11 20:10:00</td><td>43114</td><td>closed</td><td>2016-10-06 06:25:15</td></tr><tr><td>8fbec734-a15a-42ab-8d51-60790de7750b</td><td>1</td><td>565de4be-dc80-4849-a7e1-54bc79156cc8</td><td>2016</td><td>REG</td><td>D</td><td>3:42</td><td>222</td><td>12079497-e414-450a-8bf2-29f91de646bf</td><td>Braves</td><td>55714da8-fcaf-4574-8443-59bfb511a524</td><td>Cubs</td><td>2016-06-12 17:35:00</td><td>31625</td><td>closed</td><td>2016-10-06 06:25:15</td></tr><tr><td>89e514d5-fbf5-4b9d-bdac-6ca45bfd18dd</td><td>1</td><td>565de4be-dc80-4849-a7e1-54bc79156cc8</td><td>2016</td><td>REG</td><td>D</td><td>2:44</td><td>164</td><td>2142e1ba-3b40-445c-b8bb-f1f8b1054220</td><td>Phillies</td><td>55714da8-fcaf-4574-8443-59bfb511a524</td><td>Cubs</td><td>2016-06-08 17:05:00</td><td>28650</td><td>closed</td><td>2016-10-06 06:25:15</td></tr></tbody></table></div>
-    <br>(rows: 5, time: 0.7s,   582KB processed, job: job_7kjKYlmYJhao_sAExi6d3oQrkHd2)<br>
-    <script src="./Assignment-1_files/require.js"></script>
-    <script>
-      require.config({
-        paths: {
-          base: '/static/base',
-          d3: '//cdnjs.cloudflare.com/ajax/libs/d3/3.4.13/d3',
-          plotly: 'https://cdn.plot.ly/plotly-1.5.1.min.js?noext',
-          jquery: '//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min'
-        },
-        map: {
-          '*': {
-            datalab: 'nbextensions/gcpdatalab'
-          }
-        },
-        shim: {
-          plotly: {
-            deps: ['d3', 'jquery'],
-            exports: 'plotly'
-          }
-        }
-      });
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-      require(['datalab/charting', 'datalab/element!1_156463454086', 'base/js/events',
-          'datalab/style!/nbextensions/gcpdatalab/charting.css'],
-        function(charts, dom, events) {
-          charts.render('gcharts', dom, events, 'table', [], {"rows": [{"c": [{"v": "e14b6493-9e7f-404f-840a-8a680cc364bf"}, {"v": 1}, {"v": "565de4be-dc80-4849-a7e1-54bc79156cc8"}, {"v": 2016}, {"v": "REG"}, {"v": "D"}, {"v": "3:07"}, {"v": 187}, {"v": "03556285-bdbb-4576-a06d-42f71f46ddc5"}, {"v": "Marlins"}, {"v": "55714da8-fcaf-4574-8443-59bfb511a524"}, {"v": "Cubs"}, {"v": "2016-06-26T17:10:00"}, {"v": 27318}, {"v": "closed"}, {"v": "2016-10-06T06:25:15"}]}, {"c": [{"v": "1f32b347-cbcb-4c31-a145-0e685306d168"}, {"v": 1}, {"v": "565de4be-dc80-4849-a7e1-54bc79156cc8"}, {"v": 2016}, {"v": "REG"}, {"v": "D"}, {"v": "3:09"}, {"v": 189}, {"v": "03556285-bdbb-4576-a06d-42f71f46ddc5"}, {"v": "Marlins"}, {"v": "55714da8-fcaf-4574-8443-59bfb511a524"}, {"v": "Cubs"}, {"v": "2016-06-25T20:10:00"}, {"v": 29457}, {"v": "closed"}, {"v": "2016-10-06T06:25:15"}]}, {"c": [{"v": "0c2292d1-7398-48be-bf8e-b41dad5e1a43"}, {"v": 1}, {"v": "565de4be-dc80-4849-a7e1-54bc79156cc8"}, {"v": 2016}, {"v": "REG"}, {"v": "D"}, {"v": "2:45"}, {"v": 165}, {"v": "12079497-e414-450a-8bf2-29f91de646bf"}, {"v": "Braves"}, {"v": "55714da8-fcaf-4574-8443-59bfb511a524"}, {"v": "Cubs"}, {"v": "2016-06-11T20:10:00"}, {"v": 43114}, {"v": "closed"}, {"v": "2016-10-06T06:25:15"}]}, {"c": [{"v": "8fbec734-a15a-42ab-8d51-60790de7750b"}, {"v": 1}, {"v": "565de4be-dc80-4849-a7e1-54bc79156cc8"}, {"v": 2016}, {"v": "REG"}, {"v": "D"}, {"v": "3:42"}, {"v": 222}, {"v": "12079497-e414-450a-8bf2-29f91de646bf"}, {"v": "Braves"}, {"v": "55714da8-fcaf-4574-8443-59bfb511a524"}, {"v": "Cubs"}, {"v": "2016-06-12T17:35:00"}, {"v": 31625}, {"v": "closed"}, {"v": "2016-10-06T06:25:15"}]}, {"c": [{"v": "89e514d5-fbf5-4b9d-bdac-6ca45bfd18dd"}, {"v": 1}, {"v": "565de4be-dc80-4849-a7e1-54bc79156cc8"}, {"v": 2016}, {"v": "REG"}, {"v": "D"}, {"v": "2:44"}, {"v": 164}, {"v": "2142e1ba-3b40-445c-b8bb-f1f8b1054220"}, {"v": "Phillies"}, {"v": "55714da8-fcaf-4574-8443-59bfb511a524"}, {"v": "Cubs"}, {"v": "2016-06-08T17:05:00"}, {"v": 28650}, {"v": "closed"}, {"v": "2016-10-06T06:25:15"}]}], "cols": [{"type": "string", "id": "gameId", "label": "gameId"}, {"type": "number", "id": "gameNumber", "label": "gameNumber"}, {"type": "string", "id": "seasonId", "label": "seasonId"}, {"type": "number", "id": "year", "label": "year"}, {"type": "string", "id": "type", "label": "type"}, {"type": "string", "id": "dayNight", "label": "dayNight"}, {"type": "string", "id": "duration", "label": "duration"}, {"type": "number", "id": "duration_minutes", "label": "duration_minutes"}, {"type": "string", "id": "homeTeamId", "label": "homeTeamId"}, {"type": "string", "id": "homeTeamName", "label": "homeTeamName"}, {"type": "string", "id": "awayTeamId", "label": "awayTeamId"}, {"type": "string", "id": "awayTeamName", "label": "awayTeamName"}, {"type": "timestamp", "id": "startTime", "label": "startTime"}, {"type": "number", "id": "attendance", "label": "attendance"}, {"type": "string", "id": "status", "label": "status"}, {"type": "timestamp", "id": "created", "label": "created"}]},
-            {
-              pageSize: 25,
-              cssClassNames:  {
-                tableRow: 'gchart-table-row',
-                headerRow: 'gchart-table-headerrow',
-                oddTableRow: 'gchart-table-oddrow',
-                selectedTableRow: 'gchart-table-selectedrow',
-                hoverTableRow: 'gchart-table-hoverrow',
-                tableCell: 'gchart-table-cell',
-                headerCell: 'gchart-table-headercell',
-                rowNumberCell: 'gchart-table-rownumcell'
-              }
-            },
-            {source_index: 0, fields: 'gameId,gameNumber,seasonId,year,type,dayNight,duration,duration_minutes,homeTeamId,homeTeamName,awayTeamId,awayTeamName,startTime,attendance,status,created'},
-            0,
-            5);
-        }
-      );
-    </script>
-  
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>gameId</th>
+      <th>gameNumber</th>
+      <th>seasonId</th>
+      <th>year</th>
+      <th>type</th>
+      <th>dayNight</th>
+      <th>duration</th>
+      <th>duration_minutes</th>
+      <th>homeTeamId</th>
+      <th>homeTeamName</th>
+      <th>awayTeamId</th>
+      <th>awayTeamName</th>
+      <th>startTime</th>
+      <th>attendance</th>
+      <th>status</th>
+      <th>created</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>e14b6493-9e7f-404f-840a-8a680cc364bf</td>
+      <td>1</td>
+      <td>565de4be-dc80-4849-a7e1-54bc79156cc8</td>
+      <td>2016</td>
+      <td>REG</td>
+      <td>D</td>
+      <td>3:07</td>
+      <td>187</td>
+      <td>03556285-bdbb-4576-a06d-42f71f46ddc5</td>
+      <td>Marlins</td>
+      <td>55714da8-fcaf-4574-8443-59bfb511a524</td>
+      <td>Cubs</td>
+      <td>2016-06-26 17:10:00+00:00</td>
+      <td>27318</td>
+      <td>closed</td>
+      <td>2016-10-06 06:25:15+00:00</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1f32b347-cbcb-4c31-a145-0e685306d168</td>
+      <td>1</td>
+      <td>565de4be-dc80-4849-a7e1-54bc79156cc8</td>
+      <td>2016</td>
+      <td>REG</td>
+      <td>D</td>
+      <td>3:09</td>
+      <td>189</td>
+      <td>03556285-bdbb-4576-a06d-42f71f46ddc5</td>
+      <td>Marlins</td>
+      <td>55714da8-fcaf-4574-8443-59bfb511a524</td>
+      <td>Cubs</td>
+      <td>2016-06-25 20:10:00+00:00</td>
+      <td>29457</td>
+      <td>closed</td>
+      <td>2016-10-06 06:25:15+00:00</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0c2292d1-7398-48be-bf8e-b41dad5e1a43</td>
+      <td>1</td>
+      <td>565de4be-dc80-4849-a7e1-54bc79156cc8</td>
+      <td>2016</td>
+      <td>REG</td>
+      <td>D</td>
+      <td>2:45</td>
+      <td>165</td>
+      <td>12079497-e414-450a-8bf2-29f91de646bf</td>
+      <td>Braves</td>
+      <td>55714da8-fcaf-4574-8443-59bfb511a524</td>
+      <td>Cubs</td>
+      <td>2016-06-11 20:10:00+00:00</td>
+      <td>43114</td>
+      <td>closed</td>
+      <td>2016-10-06 06:25:15+00:00</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>8fbec734-a15a-42ab-8d51-60790de7750b</td>
+      <td>1</td>
+      <td>565de4be-dc80-4849-a7e1-54bc79156cc8</td>
+      <td>2016</td>
+      <td>REG</td>
+      <td>D</td>
+      <td>3:42</td>
+      <td>222</td>
+      <td>12079497-e414-450a-8bf2-29f91de646bf</td>
+      <td>Braves</td>
+      <td>55714da8-fcaf-4574-8443-59bfb511a524</td>
+      <td>Cubs</td>
+      <td>2016-06-12 17:35:00+00:00</td>
+      <td>31625</td>
+      <td>closed</td>
+      <td>2016-10-06 06:25:15+00:00</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>89e514d5-fbf5-4b9d-bdac-6ca45bfd18dd</td>
+      <td>1</td>
+      <td>565de4be-dc80-4849-a7e1-54bc79156cc8</td>
+      <td>2016</td>
+      <td>REG</td>
+      <td>D</td>
+      <td>2:44</td>
+      <td>164</td>
+      <td>2142e1ba-3b40-445c-b8bb-f1f8b1054220</td>
+      <td>Phillies</td>
+      <td>55714da8-fcaf-4574-8443-59bfb511a524</td>
+      <td>Cubs</td>
+      <td>2016-06-08 17:05:00+00:00</td>
+      <td>28650</td>
+      <td>closed</td>
+      <td>2016-10-06 06:25:15+00:00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 
 </div>
@@ -15197,10 +13259,10 @@ SELECT * FROM `bigquery-public-data.baseball.schedules` LIMIT 5
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Your answer goes here</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Your answer goes here</span>
 </pre></div>
 
     </div>
@@ -15211,7 +13273,7 @@ SELECT * FROM `bigquery-public-data.baseball.schedules` LIMIT 5
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Question-2">Question 2<a class="anchor-link" href="https://8081-dot-4725377-dot-devshell.appspot.com/nbconvert/html/datalab/notebooks/Assignment-1.ipynb#Question-2">¶</a></h3><p>In 2016, on average which team played the longest games at home?</p>
+<h3 id="Question-2">Question 2<a class="anchor-link" href="#Question-2">&#182;</a></h3><p>In 2016, on average which team played the longest games at home?</p>
 <p>Hint: You will need to take the average of <code>duration_minutes</code> for each <code>homeTeamName</code>. This can be achieved by a <code>GROUP BY</code> and then an <code>ORDER BY</code>.</p>
 
 </div>
@@ -15219,10 +13281,10 @@ SELECT * FROM `bigquery-public-data.baseball.schedules` LIMIT 5
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Your answer goes here</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Your answer goes here</span>
 </pre></div>
 
     </div>
@@ -15235,10 +13297,12 @@ SELECT * FROM `bigquery-public-data.baseball.schedules` LIMIT 5
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
 <hr>
-<h3 id="Question-3">Question 3<a class="anchor-link" href="https://8081-dot-4725377-dot-devshell.appspot.com/nbconvert/html/datalab/notebooks/Assignment-1.ipynb#Question-3">¶</a></h3><p>The remaining questions refer to table <code>bigquery-public-data.austin_bikeshare.bikeshare_trips</code>.</p>
-<p>How many distinct and valid station IDs are in this table?</p>
+<h3 id="Question-3">Question 3<a class="anchor-link" href="#Question-3">&#182;</a></h3><p>The remaining questions refer to table <code>bigquery-public-data.austin_bikeshare.bikeshare_trips</code>.</p>
+<p>How many distinct and valid station IDs are in this table? Valid station IDs are integer numbers.</p>
 <p>Note1: notice that we are looking for valid station IDs, meaning that any station ID that is missing (is null) should be excluded.</p>
 <p>Note2: the question doesn't specify <code>start_station_id</code> or <code>end_station_id</code> and is referring to all the station IDs. You would need to use a UNION to merge them all.</p>
+<p>Note3: <code>start_station_id</code> is listed as INT but <code>end_station_id</code> is STR. In order to do a UNION you must have all of the columns in the same format and same data type. Convert <code>start_station_id</code> to STR: I.e, <code>CAST(start_station_id AS STRING)</code></p>
+<p>Hint: some records have <code>end_station_id</code> as <code>"Event"</code>. Since these do not qualify as a valid station ID we will have to exclude them.</p>
 
 </div>
 </div>
@@ -15248,7 +13312,7 @@ SELECT * FROM `bigquery-public-data.baseball.schedules` LIMIT 5
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="o">%%</span><span class="k">bq</span> query
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">bigquery</span>
 SELECT * FROM `bigquery-public-data.austin_bikeshare.bikeshare_trips` LIMIT 5
 </pre></div>
 
@@ -15267,55 +13331,99 @@ SELECT * FROM `bigquery-public-data.austin_bikeshare.bikeshare_trips` LIMIT 5
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-    <div class="bqtv" id="4_156463454757"><table><tbody><tr><th>trip_id</th><th>subscriber_type</th><th>bikeid</th><th>start_time</th><th>start_station_id</th><th>start_station_name</th><th>end_station_id</th><th>end_station_name</th><th>duration_minutes</th></tr><tr><td>9900285908</td><td>Annual Membership (Austin B-cycle)</td><td>400</td><td>2014-10-26 14:12:00</td><td>2823</td><td>Capital Metro HQ - East 5th at Broadway</td><td>2544</td><td>East 6th &amp; Pedernales St.</td><td>10</td></tr><tr><td>9900289692</td><td>Walk Up</td><td>248</td><td>2015-10-02 21:12:01</td><td>1006</td><td>Zilker Park West</td><td>1008</td><td>Nueces @ 3rd</td><td>39</td></tr><tr><td>9900285987</td><td>24-Hour Kiosk (Austin B-cycle)</td><td>446</td><td>2014-10-26 15:12:00</td><td>2712</td><td>Toomey Rd @ South Lamar</td><td>2712</td><td>Toomey Rd @ South Lamar</td><td>31</td></tr><tr><td>9900285989</td><td>24-Hour Kiosk (Austin B-cycle)</td><td>203</td><td>2014-10-26 15:12:00</td><td>2712</td><td>Toomey Rd @ South Lamar</td><td>2712</td><td>Toomey Rd @ South Lamar</td><td>31</td></tr><tr><td>9900285991</td><td>24-Hour Kiosk (Austin B-cycle)</td><td>101</td><td>2014-10-26 15:12:00</td><td>2712</td><td>Toomey Rd @ South Lamar</td><td>2712</td><td>Toomey Rd @ South Lamar</td><td>30</td></tr></tbody></table></div>
-    <br>(rows: 5, time: 0.3s, cached, job: job_a3de0AGG5UGmpaQrbxZ_1OxK1U7P)<br>
-    <script src="./Assignment-1_files/require.js"></script>
-    <script>
-      require.config({
-        paths: {
-          base: '/static/base',
-          d3: '//cdnjs.cloudflare.com/ajax/libs/d3/3.4.13/d3',
-          plotly: 'https://cdn.plot.ly/plotly-1.5.1.min.js?noext',
-          jquery: '//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min'
-        },
-        map: {
-          '*': {
-            datalab: 'nbextensions/gcpdatalab'
-          }
-        },
-        shim: {
-          plotly: {
-            deps: ['d3', 'jquery'],
-            exports: 'plotly'
-          }
-        }
-      });
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-      require(['datalab/charting', 'datalab/element!4_156463454757', 'base/js/events',
-          'datalab/style!/nbextensions/gcpdatalab/charting.css'],
-        function(charts, dom, events) {
-          charts.render('gcharts', dom, events, 'table', [], {"rows": [{"c": [{"v": 9900285908}, {"v": "Annual Membership (Austin B-cycle)"}, {"v": "400"}, {"v": "2014-10-26T14:12:00"}, {"v": 2823}, {"v": "Capital Metro HQ - East 5th at Broadway"}, {"v": 2544}, {"v": "East 6th & Pedernales St."}, {"v": 10}]}, {"c": [{"v": 9900289692}, {"v": "Walk Up"}, {"v": "248"}, {"v": "2015-10-02T21:12:01"}, {"v": 1006}, {"v": "Zilker Park West"}, {"v": 1008}, {"v": "Nueces @ 3rd"}, {"v": 39}]}, {"c": [{"v": 9900285987}, {"v": "24-Hour Kiosk (Austin B-cycle)"}, {"v": "446"}, {"v": "2014-10-26T15:12:00"}, {"v": 2712}, {"v": "Toomey Rd @ South Lamar"}, {"v": 2712}, {"v": "Toomey Rd @ South Lamar"}, {"v": 31}]}, {"c": [{"v": 9900285989}, {"v": "24-Hour Kiosk (Austin B-cycle)"}, {"v": "203"}, {"v": "2014-10-26T15:12:00"}, {"v": 2712}, {"v": "Toomey Rd @ South Lamar"}, {"v": 2712}, {"v": "Toomey Rd @ South Lamar"}, {"v": 31}]}, {"c": [{"v": 9900285991}, {"v": "24-Hour Kiosk (Austin B-cycle)"}, {"v": "101"}, {"v": "2014-10-26T15:12:00"}, {"v": 2712}, {"v": "Toomey Rd @ South Lamar"}, {"v": 2712}, {"v": "Toomey Rd @ South Lamar"}, {"v": 30}]}], "cols": [{"type": "number", "id": "trip_id", "label": "trip_id"}, {"type": "string", "id": "subscriber_type", "label": "subscriber_type"}, {"type": "string", "id": "bikeid", "label": "bikeid"}, {"type": "timestamp", "id": "start_time", "label": "start_time"}, {"type": "number", "id": "start_station_id", "label": "start_station_id"}, {"type": "string", "id": "start_station_name", "label": "start_station_name"}, {"type": "number", "id": "end_station_id", "label": "end_station_id"}, {"type": "string", "id": "end_station_name", "label": "end_station_name"}, {"type": "number", "id": "duration_minutes", "label": "duration_minutes"}]},
-            {
-              pageSize: 25,
-              cssClassNames:  {
-                tableRow: 'gchart-table-row',
-                headerRow: 'gchart-table-headerrow',
-                oddTableRow: 'gchart-table-oddrow',
-                selectedTableRow: 'gchart-table-selectedrow',
-                hoverTableRow: 'gchart-table-hoverrow',
-                tableCell: 'gchart-table-cell',
-                headerCell: 'gchart-table-headercell',
-                rowNumberCell: 'gchart-table-rownumcell'
-              }
-            },
-            {source_index: 3, fields: 'trip_id,subscriber_type,bikeid,start_time,start_station_id,start_station_name,end_station_id,end_station_name,duration_minutes'},
-            0,
-            5);
-        }
-      );
-    </script>
-  
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>trip_id</th>
+      <th>subscriber_type</th>
+      <th>bikeid</th>
+      <th>start_time</th>
+      <th>start_station_id</th>
+      <th>start_station_name</th>
+      <th>end_station_id</th>
+      <th>end_station_name</th>
+      <th>duration_minutes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>9900289692</td>
+      <td>Walk Up</td>
+      <td>248</td>
+      <td>2015-10-02 21:12:01+00:00</td>
+      <td>1006</td>
+      <td>Zilker Park West</td>
+      <td>1008</td>
+      <td>Nueces @ 3rd</td>
+      <td>39</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>9900285987</td>
+      <td>24-Hour Kiosk (Austin B-cycle)</td>
+      <td>446</td>
+      <td>2014-10-26 15:12:00+00:00</td>
+      <td>2712</td>
+      <td>Toomey Rd @ South Lamar</td>
+      <td>2712</td>
+      <td>Toomey Rd @ South Lamar</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>9900285989</td>
+      <td>24-Hour Kiosk (Austin B-cycle)</td>
+      <td>203</td>
+      <td>2014-10-26 15:12:00+00:00</td>
+      <td>2712</td>
+      <td>Toomey Rd @ South Lamar</td>
+      <td>2712</td>
+      <td>Toomey Rd @ South Lamar</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>9900285991</td>
+      <td>24-Hour Kiosk (Austin B-cycle)</td>
+      <td>101</td>
+      <td>2014-10-26 15:12:00+00:00</td>
+      <td>2712</td>
+      <td>Toomey Rd @ South Lamar</td>
+      <td>2712</td>
+      <td>Toomey Rd @ South Lamar</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>9900286140</td>
+      <td>24-Hour Kiosk (Austin B-cycle)</td>
+      <td>242</td>
+      <td>2014-10-26 18:12:00+00:00</td>
+      <td>2541</td>
+      <td>State Capitol @ 14th &amp; Colorado</td>
+      <td>2541</td>
+      <td>State Capitol @ 14th &amp; Colorado</td>
+      <td>19</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 
 </div>
@@ -15326,10 +13434,10 @@ SELECT * FROM `bigquery-public-data.austin_bikeshare.bikeshare_trips` LIMIT 5
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Your answer goes here</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Your answer goes here</span>
 </pre></div>
 
     </div>
@@ -15340,7 +13448,28 @@ SELECT * FROM `bigquery-public-data.austin_bikeshare.bikeshare_trips` LIMIT 5
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Question-4">Question 4<a class="anchor-link" href="https://8081-dot-4725377-dot-devshell.appspot.com/nbconvert/html/datalab/notebooks/Assignment-1.ipynb#Question-4">¶</a></h3><p>Which station has the highest number of trips that start and end from that place?</p>
+<h3 id="Question-4">Question 4<a class="anchor-link" href="#Question-4">&#182;</a></h3><p>Which station has the highest number of trips that start from and end at that station?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Your answer goes here</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-5">Question 5<a class="anchor-link" href="#Question-5">&#182;</a></h3><p>Which station is the most popular destination?</p>
 
 </div>
 </div>
@@ -15350,7 +13479,7 @@ SELECT * FROM `bigquery-public-data.austin_bikeshare.bikeshare_trips` LIMIT 5
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Your answer goes here</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Your answer goes here</span>
 </pre></div>
 
     </div>
@@ -15361,7 +13490,7 @@ SELECT * FROM `bigquery-public-data.austin_bikeshare.bikeshare_trips` LIMIT 5
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Question-5">Question 5<a class="anchor-link" href="https://8081-dot-4725377-dot-devshell.appspot.com/nbconvert/html/datalab/notebooks/Assignment-1.ipynb#Question-5">¶</a></h3><p>Which station is the most popular destination?</p>
+<h3 id="Question-6">Question 6<a class="anchor-link" href="#Question-6">&#182;</a></h3><p>How many different types of subscribers appear in this dataset?</p>
 
 </div>
 </div>
@@ -15371,7 +13500,7 @@ SELECT * FROM `bigquery-public-data.austin_bikeshare.bikeshare_trips` LIMIT 5
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Your answer goes here</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Your answer goes here</span>
 </pre></div>
 
     </div>
@@ -15382,7 +13511,7 @@ SELECT * FROM `bigquery-public-data.austin_bikeshare.bikeshare_trips` LIMIT 5
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Question-6">Question 6<a class="anchor-link" href="https://8081-dot-4725377-dot-devshell.appspot.com/nbconvert/html/datalab/notebooks/Assignment-1.ipynb#Question-6">¶</a></h3><p>How many different types of subscribers appear in this dataset?</p>
+<h3 id="Question-7">Question 7<a class="anchor-link" href="#Question-7">&#182;</a></h3><p>Which one is by far the most popular subscriber plan?</p>
 
 </div>
 </div>
@@ -15392,7 +13521,7 @@ SELECT * FROM `bigquery-public-data.austin_bikeshare.bikeshare_trips` LIMIT 5
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Your answer goes here</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Your answer goes here</span>
 </pre></div>
 
     </div>
@@ -15403,7 +13532,7 @@ SELECT * FROM `bigquery-public-data.austin_bikeshare.bikeshare_trips` LIMIT 5
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Question-7">Question 7<a class="anchor-link" href="https://8081-dot-4725377-dot-devshell.appspot.com/nbconvert/html/datalab/notebooks/Assignment-1.ipynb#Question-7">¶</a></h3><p>Which one is by far the most popular plan?</p>
+<h3 id="Question-8">Question 8<a class="anchor-link" href="#Question-8">&#182;</a></h3><p>How many bike rides are in this dataset?</p>
 
 </div>
 </div>
@@ -15413,7 +13542,7 @@ SELECT * FROM `bigquery-public-data.austin_bikeshare.bikeshare_trips` LIMIT 5
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Your answer goes here</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Your answer goes here</span>
 </pre></div>
 
     </div>
@@ -15424,7 +13553,8 @@ SELECT * FROM `bigquery-public-data.austin_bikeshare.bikeshare_trips` LIMIT 5
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Question-8">Question 8<a class="anchor-link" href="https://8081-dot-4725377-dot-devshell.appspot.com/nbconvert/html/datalab/notebooks/Assignment-1.ipynb#Question-8">¶</a></h3><p>How many bike rides are in this dataset?</p>
+<h3 id="Question-9">Question 9<a class="anchor-link" href="#Question-9">&#182;</a></h3><p>Which month was the busiest month in 2019?</p>
+<p>Hint: Use the EXTRACT function to extract the date components. For more documentation go to the documentation: <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/date_functions">https://cloud.google.com/bigquery/docs/reference/standard-sql/date_functions</a></p>
 
 </div>
 </div>
@@ -15434,63 +13564,7 @@ SELECT * FROM `bigquery-public-data.austin_bikeshare.bikeshare_trips` LIMIT 5
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Your answer goes here</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Question-9">Question 9<a class="anchor-link" href="https://8081-dot-4725377-dot-devshell.appspot.com/nbconvert/html/datalab/notebooks/Assignment-1.ipynb#Question-9">¶</a></h3><p>Which month was the busiest month in 2018?</p>
-<p>Hint: Use the EXTRACT function to extract the date components. For more documentation go to the documentation: <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/date_functions">https://cloud.google.com/bigquery/docs/reference/standard-sql/date_functions</a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Your answer goes here</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Question-10-(BONUS)">Question 10 (BONUS)<a class="anchor-link" href="https://8081-dot-4725377-dot-devshell.appspot.com/nbconvert/html/datalab/notebooks/Assignment-1.ipynb#Question-10-(BONUS)">¶</a></h3><p>Create a "columns" chart that shows the number of rides in each week of 2018.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Your answer goes here</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Your answer goes here</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Your answer goes here</span>
 </pre></div>
 
     </div>
@@ -15500,10 +13574,9 @@ SELECT * FROM `bigquery-public-data.austin_bikeshare.bikeshare_trips` LIMIT 5
 </div>
     </div>
   </div>
-
+</body>
 
  
 
 
-
-</body></html>
+</html>

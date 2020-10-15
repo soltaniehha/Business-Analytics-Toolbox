@@ -1,4 +1,4 @@
-%%bq query
+%%bigquery
 CREATE OR REPLACE TABLE `examples.retail`
 AS
 SELECT *, (Quantity * UnitPrice) AS SalesDollar FROM `examples.online_retail`

@@ -1,2 +1,2 @@
-%%bq query
-SELECT min(InvoiceDate), max(InvoiceDate) FROM `examples.retail`
+%%bigquery
+SELECT min(InvoiceDate) first, max(InvoiceDate) last FROM `examples.retail`

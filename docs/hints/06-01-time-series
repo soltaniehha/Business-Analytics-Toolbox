@@ -1,1 +1,1 @@
-%%chart annotation -d transactions
+transactions.plot()

@@ -1,4 +1,4 @@
-%%bq query -n transactions
+%%bigquery transactions
 SELECT EXTRACT(DATE FROM InvoiceDate) AS day, count(*) AS NumberOfTransactions FROM `examples.retail`
 GROUP BY day
 ORDER BY day

@@ -1,4 +1,4 @@
-%%bq query
+%%bigquery
 SELECT Country, count(*) AS NumberOfTransactions, round(sum(SalesDollar)) AS Revenue FROM `examples.retail`
 GROUP BY Country
 ORDER BY Revenue DESC

@@ -1,2 +1,2 @@
-%%bq query
+%%bigquery
 SELECT count(*) FROM `examples.retail`

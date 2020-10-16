@@ -1,4 +1,4 @@
 %%bigquery
-SELECT EXTRACT(DATE FROM InvoiceDate) AS day, count(*) AS NumberOfTransactions FROM `examples.retail`
-GROUP BY day
-ORDER BY day
+SELECT InvoiceDate, count(*) AS NumberOfTransactions FROM `examples.retail`
+GROUP BY InvoiceDate
+ORDER BY InvoiceDate

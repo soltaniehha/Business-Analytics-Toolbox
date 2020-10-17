@@ -1,4 +1,4 @@
-%%bq query
+%%bigquery
 SELECT * FROM `ba-770.public.customer_info`
 UNION DISTINCT
 SELECT CustomerID, * EXCEPT(CustomerID) FROM `ba-770.public.customer_info_past`

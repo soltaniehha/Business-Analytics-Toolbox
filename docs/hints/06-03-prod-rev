@@ -1,4 +1,4 @@
-%%bq query
+%%bigquery
 SELECT B.Name, (A.total * B.Price) AS Revenue FROM
 (SELECT ProductID, SUM(Quantity) total FROM `ba-770.public.transactions` GROUP BY ProductID) A
 RIGHT JOIN `ba-770.public.product_info` B

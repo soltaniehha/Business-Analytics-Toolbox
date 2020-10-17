@@ -1,4 +1,4 @@
-%%bq query
+%%bigquery
 SELECT A.*, B.Name FROM
 (SELECT ProductID, SUM(Quantity) total FROM `ba-770.public.transactions` GROUP BY ProductID) A
 LEFT JOIN `ba-770.public.product_info` B

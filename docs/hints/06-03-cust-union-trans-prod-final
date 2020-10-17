@@ -1,4 +1,4 @@
-%%bq query
+%%bigquery
 SELECT CustomerName, STRING_AGG(DISTINCT ProdcutName) AS Products FROM
 (
   SELECT A.CustomerName, B.ProductID, C.Name AS ProdcutName FROM

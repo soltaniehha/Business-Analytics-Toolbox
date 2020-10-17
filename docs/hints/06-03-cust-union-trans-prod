@@ -1,4 +1,4 @@
-%%bq query
+%%bigquery
 SELECT A.CustomerName, B.ProductID, C.Name AS ProdcutName FROM
 (SELECT * FROM `ba-770.public.customer_info`
 UNION DISTINCT

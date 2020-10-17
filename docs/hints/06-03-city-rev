@@ -1,4 +1,4 @@
-%%bq query
+%%bigquery
 SELECT City, AVG(Age) AverageAge, SUM(Price) AS Revenue FROM
 (
   SELECT A.CustomerName, A.City, A.Age, C.Price FROM

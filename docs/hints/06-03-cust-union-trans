@@ -1,4 +1,4 @@
-%%bq query
+%%bigquery
 SELECT A.CustomerName, B.ProductID FROM
 (
   SELECT * FROM `ba-770.public.customer_info`

@@ -1,1 +1,1 @@
-03-01-AI-Platform-BigQuery.ipynb notebook comes from Google documentation.
+04-01-Vertex-AI-BigQuery.ipynb notebook comes from Google documentation.

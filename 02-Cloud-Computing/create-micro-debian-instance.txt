@@ -1,4 +1,5 @@
-gcloud compute --project=<PROJECT-ID> instances create micro\
+gcloud compute instances create micro\
+  --project=<PROJECT-ID>\
   --zone=us-central1-a\
   --machine-type=e2-micro\
   --image=debian-11-bullseye-v20231010\

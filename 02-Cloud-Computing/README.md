@@ -2,7 +2,7 @@
 
 `create-micro-instance.txt` script creates an e2-micro instance named **micro**.
 
-`create-self-stopping-micro-instance.txt` script creates an f1-micro instance named **micro-auto** that will stop itself once the user is logged out to bring in cost-saving benefits.
+`create-self-stopping-micro-instance.txt` script creates an e2-micro instance named **micro-auto** that will stop itself once the user is logged out to bring in cost-saving benefits.
 
 ## Instructions on Creating the Instance & RStudio Server Installation
 

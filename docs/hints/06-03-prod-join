@@ -1,5 +1,7 @@
 %%bigquery
-SELECT A.*, B.Name FROM
-(SELECT ProductID, SUM(Quantity) total FROM `ba-770.public.transactions` GROUP BY ProductID) A
+SELECT A.ProductID, B.Name , SUM(Quantity) total
+FROM `ba-770.public.transactions` A
 LEFT JOIN `ba-770.public.product_info` B
 ON A.ProductID = B.ID
+GROUP BY A.ProductID, B.Name
+ORDER BY total DESC

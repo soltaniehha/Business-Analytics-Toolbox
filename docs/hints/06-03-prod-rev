@@ -1,7 +1,7 @@
 %%bigquery
-SELECT A.ProductID, B.Name , (A.total * B.Price) Revenue
+SELECT B.Name , SUM(A.Quantity * B.Price) Revenue
 FROM `ba-770.public.transactions` A
 LEFT JOIN `ba-770.public.product_info` B
 ON A.ProductID = B.ID
-GROUP BY A.ProductID, B.Name
+GROUP BY B.Name
 ORDER BY Revenue DESC

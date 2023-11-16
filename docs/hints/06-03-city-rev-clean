@@ -1,5 +1,5 @@
 %%bigquery
-SELECT City, AVG(Age) AverageAge, SUM(Price*Quantity) AS Revenue FROM
+SELECT City, ROUND(AVG(Age)) AverageAge, SUM(Price*Quantity) AS Revenue FROM
 (
   SELECT A.CustomerName, A.City, A.Age, B.Quantity, C.Price FROM
   (
@@ -13,4 +13,5 @@ SELECT City, AVG(Age) AverageAge, SUM(Price*Quantity) AS Revenue FROM
   ON B.ProductID = C.ID
 )
 GROUP BY City
+HAVING Revenue IS NOT NULL
 ORDER BY Revenue DESC

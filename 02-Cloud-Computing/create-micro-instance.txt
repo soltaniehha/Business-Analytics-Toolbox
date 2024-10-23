@@ -1,9 +1,7 @@
-gcloud compute instances create micro\
-  --project=<PROJECT-ID>\
-  --zone=us-central1-a\
-  --machine-type=e2-micro\
-  --image=debian-11-bullseye-v20231010\
-  --image-project=debian-cloud\
-  --boot-disk-size=10GB\
-  --boot-disk-type=pd-standard\
+gcloud compute instances create micro \
+  --zone=us-central1-a \
+  --machine-type=e2-micro \
+  --image=projects/debian-cloud/global/images/debian-12-bookworm-v20241009 \
+  --boot-disk-size=10GB \
+  --boot-disk-type=pd-standard \
   --boot-disk-device-name=micro

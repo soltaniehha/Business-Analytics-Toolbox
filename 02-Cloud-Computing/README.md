@@ -6,9 +6,9 @@
 
 ## Instructions on Creating the Instance & RStudio Server Installation
 
-Scripts above need to be run in the Cloud Shell. But before executing them you would need to update the "--project" argument. Simply replace `<PROJECT-ID>` with your project ID. Please note that project ID is not necessarily the same as project name.
+Scripts above need to be run in the Cloud Shell.
 
-1. Once the script is updated copy and paste it to your Cloud Shell. It will take a few minutes for the instance to be ready. You can confirm this by going to your GCP console > Menu > COMPUTE > Compute Engine. If the instance is ready it will be shown as green (unless it is stopped where it would be grey). If the instance was created but stopped because you didn't log in immediately you can simply select it and hit the START button.
+1. Copy and paste the script to your Cloud Shell. It will take less than a minute for the instance to be ready. You can confirm this by going to your GCP console > Menu > COMPUTE > Compute Engine. If the instance is ready it will be shown as green (unless it is stopped where it would be grey). If the instance was created but stopped because you didn't log in immediately you can simply select it and hit the START button.
 2. Log in to your instance. From Compute Engine page you can click on SSH button. This will create a secure connection to your instance.
 3. Run the following lines one at a time to install R & RStudio Server and answer yes to the questions (~ 5mins):
 ```

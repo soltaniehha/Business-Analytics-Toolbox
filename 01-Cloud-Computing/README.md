@@ -4,64 +4,37 @@
 
 `create-self-stopping-micro-instance.txt` script creates an e2-micro instance named **micro-auto** that will stop itself once the user is logged out to bring in cost-saving benefits.
 
-## Instructions on Creating the Instance & RStudio Server Installation
+Both instances run Debian 13 (the latest `debian-13` image is picked automatically).
+
+The scripts use zone `us-east1-b`. If you get an error saying the zone doesn't have enough resources, change the zone to `us-east1-c` or `us-east1-d` in the script and in the commands below.
+
+## Creating the Instance
 
 Scripts above need to be run in the Cloud Shell.
 
 1. Copy and paste the script to your Cloud Shell. It will take less than a minute for the instance to be ready. You can confirm this by going to your GCP console > Menu > COMPUTE > Compute Engine. If the instance is ready it will be shown as green (unless it is stopped where it would be grey). If the instance was created but stopped because you didn't log in immediately you can simply select it and hit the START button.
-2. Log in to your instance. From Compute Engine page you can click on SSH button. This will create a secure connection to your instance.
-3. Run the following lines one at a time to install R & RStudio Server and answer yes to the questions (~ 5mins):
-```
-sudo apt update
-sudo apt install r-base r-base-dev
-sudo apt install gdebi-core
-wget https://download2.rstudio.org/server/bionic/amd64/rstudio-server-1.2.1335-amd64.deb
-sudo gdebi rstudio-server-1.2.1335-amd64.deb
-```
-4. By running the following command we will create a new user to access our RStudio Server (replace `<USERNAME>` with the username of your choice). You will need to provide a password, **keep it simple and write it down somewhere safe**:
-```
-sudo adduser <USERNAME>
-```
+2. Log in to your instance. From Compute Engine page you can click on SSH button. This will create a secure connection to your instance. Alternatively, from Cloud Shell run the following command, where `micro-auto` is your instance's name:
 
-Alternatively, you can set a password for the existing user. E.g., if you are connected with mohammad@micro-auto you already have a username called `mohammad`. You can set your password by:
+> `gcloud compute ssh micro-auto --zone us-east1-b`
 
-`sudo passwd mohammad`
+**Note:** the first time you connect with `gcloud compute ssh` you will be asked for an SSH key passphrase. Just hit Enter twice; it is not necessary.
 
-**Note:** once asked for a fingerprint passphrase just hit Enter twice. This is not necessary.
-
-## Log-in to RStudio
-1. If you just created your instance it is up and running and you can continue to the next step. If your instance is stopped you would need to "start" it before connecting to it. You can do it in two simple ways:
-  * Go to your Comupte Engine page, select the instance and click Start.
+## Starting & Stopping the Instance
+If your instance is stopped you would need to "start" it before connecting to it. You can do it in two simple ways:
+  * Go to your Compute Engine page, select the instance and click Start.
   * From the Cloud Shell run the following command to start an instance called `micro-auto`:
 
-> `gcloud compute instances start micro-auto --zone us-central1-a`
+> `gcloud compute instances start micro-auto --zone us-east1-b`
 
-2. From Cloud Shell (and not the SSH window) run the following command, where `micro-auto` is your instance's name:
+To stop an instance yourself, use the Stop button or:
 
-> `gcloud compute ssh micro-auto --zone us-central1-a  -- -L 8080:localhost:8787`
+> `gcloud compute instances stop micro --zone us-east1-b`
 
-3. Once you see `xxx@micro-auto:~$` at the prompt click on the **Web Preview** icon on the top right of Cloud Shell and select preview on port 8080. You should be directed to a new webpage which is the login page of your RStudio Server. Use the username/password you just created to login.
+**Note:** Since `micro-auto` is a self-stopping instance anytime you log out of the instance (by closing the SSH window or exiting the Cloud Shell) your instance will "stop" automatically. It checks every 10 seconds, starting 10 minutes after the instance boots. The `micro` instance keeps running (and billing) until you stop it.
 
-**Note:** Since this is a self-stopping instance anytime you log out of the instance (by closing or exiting the Cloud Shell) your instance will "stop" automatically.
+**Note:** Once you are done with an instance, delete it so you are not charged for its disk:
 
-**Note:** Always save your work and push it to your git repository.
+> `gcloud compute instances delete micro-auto --zone us-east1-b`
 
 ## Appendix
-A cleaner version of the startup script that has been used in `create-self-stopping-micro-instance.txt` comes below:
-
-```
-#!/bin/bash
-echo "boot $(date +'%Y%M%d-%H%m%S')" > /tmp/userdata.txt
-(
-echo "Starting..." >> /tmp/userdata.txt
-sleep 600
-while true; do
-    logins=$(w | sed 1,2d | wc -l)
-    echo "[ $(date +'%Y%M%d-%H%m%S') ] Number of logins: ${logins}" >> /tmp/userdata.txt   
-    if [ "${logins}" -eq 0 ]; then
-        shutdown -h now
-    fi
-    sleep 10
-done
-) &
-```
+`create-self-stopping-micro-instance.txt` first writes a startup script to `startup.sh` and then creates the instance with it. On every boot the script waits 10 minutes, then checks every 10 seconds whether anyone is logged in (`w -h`). When nobody is, it runs `shutdown -h now`, which stops the instance. Its log is in `/tmp/userdata.txt` on the instance.

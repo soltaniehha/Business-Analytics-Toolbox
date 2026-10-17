@@ -1,7 +1,7 @@
 gcloud compute instances create micro \
-  --zone=us-central1-a \
+  --zone=us-east1-b \
   --machine-type=e2-micro \
-  --image=projects/debian-cloud/global/images/debian-12-bookworm-v20241009 \
+  --image-family=debian-13 \
+  --image-project=debian-cloud \
   --boot-disk-size=10GB \
-  --boot-disk-type=pd-standard \
-  --boot-disk-device-name=micro
+  --boot-disk-type=pd-standard

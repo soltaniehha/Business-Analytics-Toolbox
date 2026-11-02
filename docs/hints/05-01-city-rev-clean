@@ -1,0 +1,21 @@
+%%bigquery
+SELECT City, ROUND(AVG(Age), 1) AS AverageAge, ROUND(SUM(Spend), 2) AS Revenue
+FROM
+(
+  -- one row per customer
+  SELECT A.CustomerID, A.City, A.Age, SUM(B.Quantity * C.Price) AS Spend
+  FROM
+  (
+    SELECT * FROM `ba-777.public.customer_info`
+    UNION DISTINCT
+    SELECT CustomerID, * EXCEPT(CustomerID) FROM `ba-777.public.customer_info_past`
+  ) A
+  LEFT JOIN `ba-777.public.transactions` B
+  ON A.CustomerID = B.CustomerID
+  LEFT JOIN `ba-777.public.product_info` C
+  ON B.ProductID = C.ID
+  GROUP BY A.CustomerID, A.City, A.Age
+)
+GROUP BY City
+HAVING Revenue > 0
+ORDER BY Revenue DESC

@@ -1,0 +1,13 @@
+%%bigquery
+SELECT B.Name, IFNULL(ROUND(A.total * B.Price, 2), 0) AS Revenue
+FROM
+(
+  SELECT ProductID, SUM(Quantity) total
+  FROM `ba-777.public.transactions`
+  GROUP BY ProductID
+) A
+RIGHT JOIN `ba-777.public.product_info` B
+ON A.ProductID = B.ID
+ORDER BY Revenue DESC
+
+-- Product 777 isn't in product_info, so the RIGHT JOIN drops it.

@@ -1,0 +1,5 @@
+Revenue = total quantity x price.
+
+Rice never sold, so it has no rows in transactions. To keep it, product_info has to be the table you keep in full: use a RIGHT JOIN, or put product_info first and use a LEFT JOIN.
+
+IFNULL(x, 0) turns a NULL into 0.

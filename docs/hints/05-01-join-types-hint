@@ -1,0 +1,3 @@
+Put the four counts in one query: each column can be its own (SELECT COUNT(*) FROM ... JOIN ...) subquery.
+
+To see which rows cause the differences, run the FULL OUTER JOIN and keep the rows where either side is NULL.

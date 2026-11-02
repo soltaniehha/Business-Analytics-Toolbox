@@ -1,0 +1,3 @@
+UNION matches columns by position, not by name. CustomerID is the first column in customer_info but the last in customer_info_past, so SELECT * on both fails.
+
+List the second table's columns in the same order as the first. SELECT CustomerID, * EXCEPT(CustomerID) moves one column to the front.

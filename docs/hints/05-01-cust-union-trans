@@ -1,0 +1,11 @@
+%%bigquery
+SELECT A.CustomerID, A.CustomerName, B.TransactionID, B.ProductID
+FROM
+(
+    SELECT * FROM `ba-777.public.customer_info`
+    UNION DISTINCT
+    SELECT CustomerID, * EXCEPT(CustomerID) FROM `ba-777.public.customer_info_past`
+) A
+LEFT JOIN `ba-777.public.transactions` B
+ON A.CustomerID = B.CustomerID
+ORDER BY A.CustomerID, B.TransactionID

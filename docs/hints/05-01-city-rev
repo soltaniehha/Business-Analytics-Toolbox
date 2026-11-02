@@ -1,0 +1,23 @@
+%%bigquery
+SELECT City, AVG(Age) AS AverageAge, ROUND(SUM(Spend), 2) AS Revenue
+FROM
+(
+  -- one row per customer
+  SELECT A.CustomerID, A.City, A.Age, SUM(B.Quantity * C.Price) AS Spend
+  FROM
+  (
+    SELECT * FROM `ba-777.public.customer_info`
+    UNION DISTINCT
+    SELECT CustomerID, * EXCEPT(CustomerID) FROM `ba-777.public.customer_info_past`
+  ) A
+  LEFT JOIN `ba-777.public.transactions` B
+  ON A.CustomerID = B.CustomerID
+  LEFT JOIN `ba-777.public.product_info` C
+  ON B.ProductID = C.ID
+  GROUP BY A.CustomerID, A.City, A.Age
+)
+GROUP BY City
+ORDER BY Revenue DESC
+
+-- Two sales are not in these totals: product 777 has no price (Question 1),
+-- and customer 8999999 is not in either customer table (Question 6).

@@ -1,0 +1,14 @@
+%%bigquery
+SELECT A.ProductID, B.Name, A.total
+FROM
+(
+  SELECT ProductID, SUM(Quantity) total
+  FROM `ba-777.public.transactions`
+  GROUP BY ProductID
+) A
+LEFT JOIN `ba-777.public.product_info` B
+ON A.ProductID = B.ID
+ORDER BY A.total DESC
+
+-- Product 777 has no name because it isn't in product_info.
+-- The LEFT JOIN keeps the row anyway and fills Name with NULL.

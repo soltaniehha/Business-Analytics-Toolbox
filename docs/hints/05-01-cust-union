@@ -1,0 +1,8 @@
+%%bigquery
+SELECT * FROM `ba-777.public.customer_info`
+UNION DISTINCT
+SELECT CustomerID, * EXCEPT(CustomerID) FROM `ba-777.public.customer_info_past`
+
+-- UNION ALL returns 8 rows, UNION DISTINCT returns 7.
+-- Maria is in both tables with identical values, so UNION DISTINCT keeps one copy.
+-- Use UNION DISTINCT from here on. With UNION ALL, Maria's purchases would be counted twice.

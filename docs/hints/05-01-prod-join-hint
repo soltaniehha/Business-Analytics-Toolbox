@@ -1,0 +1,3 @@
+ProductID in transactions matches ID in product_info.
+
+Wrap the query above in parentheses, give it an alias, and LEFT JOIN product_info to it on that key.

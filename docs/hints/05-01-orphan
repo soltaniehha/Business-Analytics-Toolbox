@@ -1,0 +1,13 @@
+%%bigquery
+SELECT B.*
+FROM `ba-777.public.transactions` B
+LEFT JOIN
+(
+  SELECT * FROM `ba-777.public.customer_info`
+  UNION DISTINCT
+  SELECT CustomerID, * EXCEPT(CustomerID) FROM `ba-777.public.customer_info_past`
+) A
+ON B.CustomerID = A.CustomerID
+WHERE A.CustomerID IS NULL
+
+-- Customer 8999999 isn't in either customer table. Maybe a guest checkout.

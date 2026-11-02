@@ -1,0 +1,7 @@
+%%bigquery
+SELECT A.Date, ROUND(SUM(A.Quantity * B.Price), 2) AS Revenue
+FROM `ba-777.public.transactions` A
+INNER JOIN `ba-777.public.product_info` B
+ON A.ProductID = B.ID
+GROUP BY A.Date
+ORDER BY Revenue DESC

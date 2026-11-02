@@ -1,0 +1,1 @@
+Start from transactions and LEFT JOIN the combined customer list. A transaction with no matching customer gets NULLs in every customer column. Filter for those rows with IS NULL.

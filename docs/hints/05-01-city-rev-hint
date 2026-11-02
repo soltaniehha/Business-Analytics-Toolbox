@@ -1,0 +1,7 @@
+After the joins, a customer shows up once per transaction. In Brookline, Alex has two rows and Maria has one, so AVG(Age) over those rows gives 28.3 instead of 32.
+
+Work in two steps:
+1. GROUP BY customer (CustomerID, City, Age) and compute each customer's spend with SUM(Quantity * Price).
+2. Wrap that in a subquery and GROUP BY City.
+
+Also combine the customer tables with UNION DISTINCT. With UNION ALL, Maria and her purchase show up twice.

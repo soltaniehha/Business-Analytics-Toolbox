@@ -1,0 +1,18 @@
+%%bigquery
+SELECT
+  (SELECT COUNT(*) FROM `ba-777.public.transactions` A INNER JOIN `ba-777.public.product_info` B ON A.ProductID = B.ID) AS inner_join,
+  (SELECT COUNT(*) FROM `ba-777.public.transactions` A LEFT JOIN `ba-777.public.product_info` B ON A.ProductID = B.ID) AS left_join,
+  (SELECT COUNT(*) FROM `ba-777.public.transactions` A RIGHT JOIN `ba-777.public.product_info` B ON A.ProductID = B.ID) AS right_join,
+  (SELECT COUNT(*) FROM `ba-777.public.transactions` A FULL OUTER JOIN `ba-777.public.product_info` B ON A.ProductID = B.ID) AS full_outer_join
+
+-- Run this in a separate cell to see the rows behind the differences:
+-- SELECT A.TransactionID, A.ProductID, B.ID, B.Name
+-- FROM `ba-777.public.transactions` A
+-- FULL OUTER JOIN `ba-777.public.product_info` B
+-- ON A.ProductID = B.ID
+-- WHERE A.TransactionID IS NULL OR B.ID IS NULL
+
+-- INNER (10) keeps only matches.
+-- LEFT (11) adds the sale of product 777, which isn't in product_info.
+-- RIGHT (11) adds Rice, which never sold.
+-- FULL OUTER (12) adds both.

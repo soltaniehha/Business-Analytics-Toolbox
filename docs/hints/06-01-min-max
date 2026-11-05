@@ -1,0 +1,7 @@
+%%bigquery
+SELECT
+    MIN(temp) AS min_avg_temp, MAX(temp) AS max_avg_temp,
+    MIN(max) AS min_max_temp, MAX(max) AS max_max_temp,
+    MIN(min) AS min_min_temp, MAX(min) AS max_min_temp,
+    MIN(prcp) AS min_prcp, MAX(prcp) AS max_prcp
+FROM `temp_dataset.gsod_2019_clean`

@@ -1,0 +1,1 @@
+The stations table has no station_id column. It calls the first key usaf, so build the same key on that side of the join: CONCAT(s.usaf, '-', s.wban).

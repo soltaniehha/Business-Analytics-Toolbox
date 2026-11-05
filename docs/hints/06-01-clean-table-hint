@@ -1,0 +1,7 @@
+Put the table definition in front of your D.2 query, and remove the LIMIT:
+
+CREATE OR REPLACE TABLE `temp_dataset.gsod_2019_clean`
+PARTITION BY date
+AS
+WITH cleaned_data AS ( ... )
+SELECT ...

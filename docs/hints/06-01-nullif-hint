@@ -1,0 +1,3 @@
+Start from your query in B.2, but list the columns instead of using *, since each cleaned column needs its own NULLIF(column, sentinel) AS column.
+
+Keep the columns you didn't clean too: temp, the count_ and flag_ columns, and the weather flags (fog, rain_drizzle, and so on).

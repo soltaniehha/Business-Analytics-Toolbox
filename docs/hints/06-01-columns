@@ -1,0 +1,4 @@
+%%bigquery
+SELECT column_name, data_type
+FROM `bigquery-public-data.noaa_gsod.INFORMATION_SCHEMA.COLUMNS`
+WHERE table_name = 'gsod2019'

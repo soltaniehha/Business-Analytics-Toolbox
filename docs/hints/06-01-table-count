@@ -1,0 +1,3 @@
+%%bigquery
+SELECT COUNT(*) AS total_rows
+FROM `temp_dataset.gsod_2019_clean`

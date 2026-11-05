@@ -1,0 +1,7 @@
+A SQL UDF has this shape:
+
+CREATE OR REPLACE FUNCTION `temp_dataset.classify_temp`(temperature FLOAT64)
+RETURNS STRING
+AS ( ... )
+
+Put a CASE expression inside the parentheses.

@@ -1,0 +1,2 @@
+%%bigquery
+SELECT * FROM `bigquery-public-data.noaa_gsod.gsod2019` LIMIT 10

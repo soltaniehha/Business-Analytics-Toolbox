@@ -1,0 +1,7 @@
+%%bigquery
+SELECT
+    temp,
+    `temp_dataset.classify_temp`(temp) AS temp_category
+FROM `temp_dataset.gsod_2019_clean`
+WHERE temp IS NOT NULL
+LIMIT 10

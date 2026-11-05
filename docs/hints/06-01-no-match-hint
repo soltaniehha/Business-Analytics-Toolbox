@@ -1,0 +1,3 @@
+A plain JOIN drops the rows with no match, so you can't count them. Use a LEFT JOIN: rows with no match get NULL in every stations column.
+
+Filter on a key column such as s.usaf. Don't use s.name, because some stations have a NULL name.

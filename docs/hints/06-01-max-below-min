@@ -1,0 +1,4 @@
+%%bigquery
+SELECT COUNT(*) AS count_max_less_than_min
+FROM `temp_dataset.gsod_2019_clean`
+WHERE max < min

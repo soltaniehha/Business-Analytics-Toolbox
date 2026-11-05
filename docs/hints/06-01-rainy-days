@@ -1,0 +1,8 @@
+%%bigquery
+SELECT
+    station_id, name,
+    COUNTIF(prcp > 0) AS rainy_days
+FROM `temp_dataset.gsod_2019_clean`
+GROUP BY station_id, name
+ORDER BY rainy_days DESC, station_id
+LIMIT 10

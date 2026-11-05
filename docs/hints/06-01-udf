@@ -1,0 +1,11 @@
+%%bigquery
+CREATE OR REPLACE FUNCTION `temp_dataset.classify_temp`(temperature FLOAT64)
+RETURNS STRING
+AS (
+  CASE
+    WHEN temperature <= 32 THEN 'freezing'
+    WHEN temperature <= 60 THEN 'cool'
+    WHEN temperature <= 80 THEN 'warm'
+    WHEN temperature > 80 THEN 'hot'
+  END
+)

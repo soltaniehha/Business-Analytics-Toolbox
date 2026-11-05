@@ -1,0 +1,5 @@
+%%bigquery
+SELECT
+    COUNT(*) AS total_rows,
+    COUNT(DISTINCT CONCAT(stn, '-', wban)) AS stations
+FROM `bigquery-public-data.noaa_gsod.gsod2019`

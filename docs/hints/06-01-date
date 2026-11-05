@@ -1,0 +1,6 @@
+%%bigquery
+SELECT
+    year, mo, da,
+    DATE(CAST(year AS INT64), CAST(mo AS INT64), CAST(da AS INT64)) AS date
+FROM `bigquery-public-data.noaa_gsod.gsod2019`
+LIMIT 5

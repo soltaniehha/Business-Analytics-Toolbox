@@ -1,0 +1,12 @@
+%%bigquery
+WITH cleaned_gsod AS (
+    SELECT
+        CONCAT(stn, '-', wban) AS station_id,
+        DATE(CAST(year AS INT64), CAST(mo AS INT64), CAST(da AS INT64)) AS date,
+        * EXCEPT(year, mo, da, stn, wban)
+    FROM `bigquery-public-data.noaa_gsod.gsod2019`
+)
+
+SELECT *
+FROM cleaned_gsod
+LIMIT 5

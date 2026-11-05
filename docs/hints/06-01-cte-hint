@@ -1,0 +1,1 @@
+SELECT * EXCEPT(year, mo, da, stn, wban) keeps every other column, so you don't have to list them.

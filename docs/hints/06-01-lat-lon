@@ -1,0 +1,4 @@
+%%bigquery
+SELECT DISTINCT station_id, lat, lon
+FROM `temp_dataset.gsod_2019_clean`
+WHERE lat < -90 OR lat > 90 OR lon < -180 OR lon > 180

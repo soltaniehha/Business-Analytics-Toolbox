@@ -1,0 +1,16 @@
+%%bigquery
+SELECT
+    COUNTIF(dewp = 9999.9) AS dewp_sentinel_count,
+    COUNTIF(slp = 9999.9) AS slp_sentinel_count,
+    COUNTIF(stp = 999.9) AS stp_sentinel_count,
+    COUNTIF(visib = 999.9) AS visib_sentinel_count,
+    COUNTIF(wdsp = "999.9") AS wdsp_sentinel_count,
+    COUNTIF(mxpsd = "999.9") AS mxpsd_sentinel_count,
+    COUNTIF(gust = 999.9) AS gust_sentinel_count,
+    COUNTIF(max = 9999.9) AS max_sentinel_count,
+    COUNTIF(min = 9999.9) AS min_sentinel_count,
+    COUNTIF(prcp = 99.99) AS prcp_sentinel_count,
+    COUNTIF(sndp = 999.9) AS sndp_sentinel_count
+FROM `bigquery-public-data.noaa_gsod.gsod2019`
+
+-- wdsp and mxpsd are STRING columns, so they compare to "999.9" in quotes.

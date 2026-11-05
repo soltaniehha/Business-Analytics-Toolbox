@@ -1,0 +1,8 @@
+%%bigquery
+SELECT
+    CONCAT(stn, '-', wban) AS station_id,
+    COUNT(*) AS reported_days
+FROM `bigquery-public-data.noaa_gsod.gsod2019`
+GROUP BY station_id
+ORDER BY reported_days DESC, station_id
+LIMIT 10

@@ -1,0 +1,1 @@
+transactions.plot(x='InvoiceDate', y='NumberOfTransactions')

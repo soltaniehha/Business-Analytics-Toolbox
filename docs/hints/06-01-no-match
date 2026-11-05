@@ -1,0 +1,27 @@
+%%bigquery
+WITH cleaned_data AS (
+    SELECT
+        CONCAT(stn, '-', wban) AS station_id,
+        DATE(CAST(year AS INT64), CAST(mo AS INT64), CAST(da AS INT64)) AS date,
+        temp,
+        count_temp,
+        NULLIF(dewp, 9999.9) AS dewp, count_dewp,
+        NULLIF(slp, 9999.9) AS slp, count_slp,
+        NULLIF(stp, 999.9) AS stp, count_stp,
+        NULLIF(visib, 999.9) AS visib, count_visib,
+        NULLIF(CAST(wdsp AS FLOAT64), 999.9) AS wdsp, count_wdsp,
+        NULLIF(CAST(mxpsd AS FLOAT64), 999.9) AS mxpsd,
+        NULLIF(gust, 999.9) AS gust,
+        NULLIF(max, 9999.9) AS max, flag_max,
+        NULLIF(min, 9999.9) AS min, flag_min,
+        NULLIF(prcp, 99.99) AS prcp, flag_prcp,
+        NULLIF(sndp, 999.9) AS sndp,
+        fog, rain_drizzle, snow_ice_pellets, hail, thunder, tornado_funnel_cloud
+    FROM `bigquery-public-data.noaa_gsod.gsod2019`
+)
+
+SELECT COUNT(*) AS no_match
+FROM cleaned_data AS cd
+LEFT JOIN `bigquery-public-data.noaa_gsod.stations` AS s
+ON cd.station_id = CONCAT(s.usaf, '-', s.wban)
+WHERE s.usaf IS NULL

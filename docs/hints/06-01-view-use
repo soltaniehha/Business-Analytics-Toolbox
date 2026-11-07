@@ -1,0 +1,5 @@
+%%bigquery
+SELECT date, temp, prcp
+FROM `temp_dataset.logan_2019`
+ORDER BY prcp DESC
+LIMIT 5

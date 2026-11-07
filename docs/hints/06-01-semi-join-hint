@@ -1,0 +1,7 @@
+A semi-join keeps rows from one table that have a match in another, without adding any columns.
+Use IN with a subquery:
+
+WHERE CONCAT(usaf, '-', wban) IN (
+    SELECT CONCAT(stn, '-', wban)
+    FROM `bigquery-public-data.noaa_gsod.gsod2019`
+)

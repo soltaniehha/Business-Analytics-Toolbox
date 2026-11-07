@@ -1,0 +1,9 @@
+%%bigquery
+SELECT
+    state,
+    COUNT(DISTINCT station_id) AS stations,
+    STRING_AGG(DISTINCT name, ', ' ORDER BY name LIMIT 3) AS example_stations
+FROM `temp_dataset.gsod_2019_clean`
+WHERE country = 'US' AND state IN ('MA', 'NH', 'VT', 'ME', 'CT', 'RI')
+GROUP BY state
+ORDER BY stations DESC

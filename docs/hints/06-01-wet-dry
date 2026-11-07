@@ -1,0 +1,8 @@
+%%bigquery
+SELECT
+    IF(prcp > 0, 'wet', 'dry') AS day_type,
+    COUNT(*) AS days
+FROM `temp_dataset.gsod_2019_clean`
+WHERE station_id = '725090-14739'
+  AND prcp IS NOT NULL
+GROUP BY day_type

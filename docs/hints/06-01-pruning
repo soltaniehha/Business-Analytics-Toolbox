@@ -1,0 +1,8 @@
+%%bigquery --dry_run
+SELECT station_id, temp
+FROM `temp_dataset.gsod_2019_clean`
+
+%%bigquery --dry_run
+SELECT station_id, temp
+FROM `temp_dataset.gsod_2019_clean`
+WHERE date BETWEEN '2019-07-01' AND '2019-07-31'

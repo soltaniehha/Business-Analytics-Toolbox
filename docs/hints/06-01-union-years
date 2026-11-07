@@ -1,0 +1,6 @@
+%%bigquery
+SELECT '2019' AS year, COUNT(*) AS row_count, ROUND(AVG(temp), 1) AS avg_temp
+FROM `bigquery-public-data.noaa_gsod.gsod2019`
+UNION ALL
+SELECT '2020' AS year, COUNT(*) AS row_count, ROUND(AVG(temp), 1) AS avg_temp
+FROM `bigquery-public-data.noaa_gsod.gsod2020`

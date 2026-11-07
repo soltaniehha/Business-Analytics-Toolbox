@@ -1,0 +1,17 @@
+%%bigquery
+WITH reported AS (
+    SELECT DISTINCT CONCAT(stn, '-', wban) AS station_id
+    FROM `bigquery-public-data.noaa_gsod.gsod2019`
+),
+listed AS (
+    SELECT CONCAT(usaf, '-', wban) AS station_id
+    FROM `bigquery-public-data.noaa_gsod.stations`
+)
+
+SELECT
+    COUNTIF(r.station_id IS NOT NULL AND l.station_id IS NOT NULL) AS in_both,
+    COUNTIF(l.station_id IS NULL) AS reported_but_not_listed,
+    COUNTIF(r.station_id IS NULL) AS listed_but_silent
+FROM reported AS r
+FULL JOIN listed AS l
+ON r.station_id = l.station_id

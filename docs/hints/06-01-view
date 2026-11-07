@@ -1,0 +1,5 @@
+%%bigquery
+CREATE OR REPLACE VIEW `temp_dataset.logan_2019` AS
+SELECT date, temp, max, min, prcp
+FROM `temp_dataset.gsod_2019_clean`
+WHERE station_id = '725090-14739'

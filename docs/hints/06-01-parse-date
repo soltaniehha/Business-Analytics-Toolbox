@@ -1,0 +1,7 @@
+%%bigquery
+SELECT
+    COUNTIF(PARSE_DATE('%Y%m%d', CONCAT(year, mo, da))
+            != DATE(CAST(year AS INT64), CAST(mo AS INT64), CAST(da AS INT64))) AS mismatches,
+    MAX(PARSE_DATE('%Y%m%d', CONCAT(year, mo, da))) AS last_date,
+    DATE_DIFF(CURRENT_DATE(), MAX(PARSE_DATE('%Y%m%d', CONCAT(year, mo, da))), DAY) AS days_ago
+FROM `bigquery-public-data.noaa_gsod.gsod2019`

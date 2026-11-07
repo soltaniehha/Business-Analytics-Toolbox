@@ -4,4 +4,4 @@ CREATE OR REPLACE FUNCTION `temp_dataset.classify_temp`(temperature FLOAT64)
 RETURNS STRING
 AS ( ... )
 
-Put a CASE expression inside the parentheses.
+Put the CASE expression from F.4 inside the parentheses, with temperature in place of temp.

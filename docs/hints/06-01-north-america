@@ -1,0 +1,9 @@
+%%bigquery
+SELECT
+    country,
+    COUNT(DISTINCT station_id) AS stations,
+    ROUND(AVG(temp), 1) AS avg_temp
+FROM `temp_dataset.gsod_2019_clean`
+WHERE country IN ('US', 'CA', 'MX')
+GROUP BY country
+ORDER BY avg_temp DESC

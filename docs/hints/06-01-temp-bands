@@ -1,0 +1,13 @@
+%%bigquery
+SELECT
+    CASE
+        WHEN temp <= 32 THEN 'freezing'
+        WHEN temp <= 60 THEN 'cool'
+        WHEN temp <= 80 THEN 'warm'
+        ELSE 'hot'
+    END AS temp_band,
+    COUNT(*) AS station_days
+FROM `temp_dataset.gsod_2019_clean`
+WHERE temp IS NOT NULL
+GROUP BY temp_band
+ORDER BY station_days DESC

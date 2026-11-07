@@ -1,0 +1,6 @@
+1. In a WITH clause, build two lists of station_id: the distinct stations in gsod2019 (reported)
+   and the stations in the stations table (listed).
+2. FULL JOIN the two lists on station_id. A FULL JOIN keeps unmatched rows from both sides
+   and fills the missing side with NULL.
+3. Use COUNTIF to count the three cases:
+   both sides NOT NULL, listed side NULL, reported side NULL.

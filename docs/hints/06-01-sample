@@ -1,0 +1,6 @@
+%%bigquery
+SELECT
+    COUNT(DISTINCT station_id) AS sampled_stations,
+    COUNT(*) AS sampled_rows
+FROM `temp_dataset.gsod_2019_clean`
+WHERE MOD(ABS(FARM_FINGERPRINT(station_id)), 10) = 0

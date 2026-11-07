@@ -1,0 +1,5 @@
+%%bigquery
+SELECT country, name, date, max
+FROM `temp_dataset.gsod_2019_clean`
+WHERE country IN ('US', 'CA', 'MX') AND max IS NOT NULL
+QUALIFY ROW_NUMBER() OVER (PARTITION BY country ORDER BY max DESC) = 1

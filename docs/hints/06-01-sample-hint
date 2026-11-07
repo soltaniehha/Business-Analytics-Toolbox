@@ -1,0 +1,6 @@
+FARM_FINGERPRINT turns a string into a big integer that is always the same for the same string.
+Take its absolute value and keep the remainder of division by 10 that equals 0:
+
+WHERE MOD(ABS(FARM_FINGERPRINT(station_id)), 10) = 0
+
+Because the hash depends only on station_id, a station is either fully in the sample or fully out.

@@ -1,0 +1,7 @@
+%%bigquery --dry_run
+SELECT *
+FROM `bigquery-public-data.noaa_gsod.gsod2019`
+
+%%bigquery --dry_run
+SELECT stn, wban, temp
+FROM `bigquery-public-data.noaa_gsod.gsod2019`

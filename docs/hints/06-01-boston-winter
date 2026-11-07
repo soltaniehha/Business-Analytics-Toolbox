@@ -1,0 +1,13 @@
+%%bigquery
+SELECT
+    EXTRACT(MONTH FROM date) AS month,
+    COUNT(*) AS days,
+    ROUND(AVG(temp), 1) AS avg_temp,
+    MIN(min) AS coldest,
+    COUNTIF(prcp > 0) AS wet_days,
+    ROUND(SUM(prcp), 2) AS total_prcp
+FROM `temp_dataset.gsod_2019_clean`
+WHERE station_id = '725090-14739'
+  AND date BETWEEN '2019-01-01' AND '2019-03-31'
+GROUP BY month
+ORDER BY month

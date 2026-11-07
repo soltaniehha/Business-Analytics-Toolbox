@@ -1,0 +1,14 @@
+%%bigquery
+SELECT country, avg_max_temp, avg_min_temp, total_station_days
+FROM (
+    SELECT
+        country,
+        AVG(max) AS avg_max_temp,
+        AVG(min) AS avg_min_temp,
+        COUNT(*) AS total_station_days
+    FROM `temp_dataset.gsod_2019_clean`
+    WHERE max IS NOT NULL AND min IS NOT NULL AND country IS NOT NULL
+    GROUP BY country
+)
+WHERE total_station_days >= 200
+ORDER BY avg_max_temp

@@ -1,0 +1,11 @@
+Put the F.3 GROUP BY query (without the HAVING line) in parentheses inside FROM:
+
+SELECT ...
+FROM (
+    SELECT country, ..., COUNT(*) AS total_station_days
+    FROM ...
+    GROUP BY country
+)
+WHERE total_station_days >= 200
+
+The outer query sees the grouped result as a regular table, so a plain WHERE can filter it.

@@ -1,0 +1,4 @@
+ROW_NUMBER() OVER (PARTITION BY country ORDER BY max DESC) numbers the rows inside each country,
+hottest first. QUALIFY filters on that number the way WHERE filters on a column:
+
+QUALIFY ROW_NUMBER() OVER (PARTITION BY country ORDER BY max DESC) = 1
